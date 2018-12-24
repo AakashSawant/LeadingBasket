@@ -7,8 +7,9 @@ import java.util.*;
 
 public interface UserDao {
 
-	public void addUser(user_master user);
-
+	public void addUser(String fname,String lname,Long mobile,String email,Date dob,String address,int city_id,int state_id,String gender,String password);
+	
+	
 	public List<user_master> getUser();
 
 	public user_master findById(int id);
@@ -21,4 +22,6 @@ public interface UserDao {
 	public List<state_master> getState();
 	public city_master getCityById(int id);
 	public List<city_master> getCities();
+	
+	public long getUserCount();
 }

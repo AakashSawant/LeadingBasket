@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>LeadingBasket</title>
+<title>Lenading Basket</title>
 <link rel="stylesheet"
 	href="assets/web/assets/mobirise-icons/mobirise-icons.css">
 <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -39,44 +42,37 @@
 				<div class="navbar-brand">
 					<span class="navbar-logo"> <a href="https://mobirise.co">
 							<img src="assets/images/logo2.png" alt="Mobirise"
-							title="Loan Studio" style="height: 3.8rem;">
+							title="LendingBasket" style="height: 3.8rem;">
 					</a>
 					</span> <span class="navbar-caption-wrap"><a
-						class="navbar-caption text-white display-4"
-						href="https://mobirise.co">LENDING BASKET</a></span>
+						class="navbar-caption text-white display-4" href="/">Lending
+							Basket</a></span>
 				</div>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav nav-dropdown nav-right"
 					data-app-modern-menu="true">
-					<li class="nav-item"><a
-						class="nav-link link text-white display-4"
-						href="https://mobirise.co">Loan Service</a></li>
-					<li class="nav-item"><a
-						class="nav-link link text-white display-4"
-						href="https://mobirise.co">Legal Service</a></li>
-					<li class="nav-item"><a
-						class="nav-link link text-white display-4"
-						href="https://mobirise.co">Financial Service</a></li>
+					<c:forEach var="prlist" items="${services}">
+						<li class="nav-item"><a
+							class="nav-link link text-white display-4" href="${prlist.name}">${prlist.name}</a></li>
+					</c:forEach>
 					<li class="nav-item dropdown"><a
 						class="nav-link link text-white dropdown-toggle display-4"
-						href="https://mobirise.co" data-toggle="dropdown-submenu"
-						aria-expanded="false">Tool</a>
-					<div class="dropdown-menu">
+						data-toggle="dropdown-submenu" aria-expanded="false">Tool</a>
+						<div class="dropdown-menu">
 							<a class="text-white dropdown-item display-4"
-								href="https://mobirise.co">Emi Calculator</a><a
+								href="/emiCalculator">Emi Calculator</a><a
 								class="text-white dropdown-item display-4"
-								href="https://mobirise.co" aria-expanded="false">Unit
-								Converter</a><a class="text-white dropdown-item display-4"
-								href="https://mobirise.co" aria-expanded="false">Jantri
+								href="/unitConversion" aria-expanded="false">Unit Converter</a><a
+								class="text-white dropdown-item display-4"
+								href="/janatriCalculator" aria-expanded="false">Jantri
 								Calculator</a>
 						</div></li>
 					<li class="nav-item"><a
-						class="nav-link link text-white display-4"
-						href="https://mobirise.co"> About Us &nbsp;</a></li>
+						class="nav-link link text-white display-4" href="/aboutUs">
+							About Us &nbsp;</a></li>
 					<li class="nav-item"><a
-						class="nav-link link text-white display-4"
-						href="https://mobirise.co">Login</a></li>
+						class="nav-link link text-white display-4" href="/loginUser">Login</a></li>
 				</ul>
 
 			</div>
@@ -84,7 +80,7 @@
 	</section>
 
 	<section class="engine">
-		<a href="https://mobirise.info/t">free amp template</a>
+		<a href="/">Loan is Happinezz</a>
 	</section>
 	<section class="carousel slide cid-r9bXovczpT" data-interval="false"
 		id="slider1-c">
@@ -112,16 +108,12 @@
 								<img src="assets/images/1.jpg">
 								<div class="carousel-caption justify-content-center">
 									<div class="col-10 align-center">
-										<h2 class="mbr-fonts-style display-1">FULL SCREEN SLIDER</h2>
-										<p class="lead mbr-text mbr-fonts-style display-5">Choose
-											from the large selection of latest pre-made blocks -
-											jumbotrons, hero images, parallax scrolling, video
-											backgrounds, hamburger menu, sticky header and more.</p>
+										<h2 class="mbr-fonts-style display-1">LOAN SERVICE</h2>
+										<p class="lead mbr-text mbr-fonts-style display-5">Make
+											Your dream home affordable</p>
 										<div class="mbr-section-btn" buttons="0">
-											<a class="btn btn-success display-4"
-												href="https://mobirise.com">FOR WINDOWS</a> <a
-												class="btn  btn-white-outline display-4"
-												href="https://mobirise.com">FOR MAC</a>
+											<a class="btn btn-success display-4" href="/Loan Service">APPLY
+												NOW</a>
 										</div>
 									</div>
 								</div>
@@ -135,15 +127,12 @@
 								<img src="assets/images/2.jpg" style="opacity: 0;">
 								<div class="carousel-caption justify-content-center">
 									<div class="col-10 align-left">
-										<h2 class="mbr-fonts-style display-1">VIDEO SLIDE</h2>
-										<p class="lead mbr-text mbr-fonts-style display-5">Slide
-											with youtube video background and color overlay. Title and
-											text are aligned to the left.</p>
+										<h2 class="mbr-fonts-style display-1">FINANCIAL SERVICE</h2>
+										<p class="lead mbr-text mbr-fonts-style display-5">Financial
+											Freedom without Boundaries</p>
 										<div class="mbr-section-btn" buttons="0">
 											<a class="btn btn-primary display-4"
-												href="https://mobirise.com">FOR WINDOWS</a> <a
-												class="btn  btn-white-outline display-4"
-												href="https://mobirise.com">FOR MAC</a>
+												href="/Financial Service">APPLY NOW</a>
 										</div>
 									</div>
 								</div>
@@ -159,15 +148,12 @@
 								<img src="assets/images/3.jpg">
 								<div class="carousel-caption justify-content-center">
 									<div class="col-10 align-right">
-										<h2 class="mbr-fonts-style display-1">IMAGE SLIDE</h2>
-										<p class="lead mbr-text mbr-fonts-style display-5">Choose
-											from the large selection of latest pre-made blocks -
-											jumbotrons, hero images, parallax scrolling, video
-											backgrounds, hamburger menu, sticky header and more.</p>
+										<h2 class="mbr-fonts-style display-1">ONLINE OR OFFLINE</h2>
+										<p class="lead mbr-text mbr-fonts-style display-5">we do
+											it all.</p>
 										<div class="mbr-section-btn" buttons="0">
-											<a class="btn btn-info display-4" href="https://mobirise.com">FOR
-												WINDOWS</a> <a class="btn  btn-white-outline display-4"
-												href="https://mobirise.com">FOR MAC</a>
+											<a class="btn btn-info display-4" href="/contectUs">Contect
+												US</a>
 										</div>
 									</div>
 								</div>
@@ -204,13 +190,12 @@
 						<span class="mbri-desktop mbr-iconfont"></span>
 					</div>
 					<div class="card-box align-center">
-						<h4 class="card-title mbr-fonts-style display-7">Unlimited
-							Sites</h4>
-						<p class="mbr-text mbr-fonts-style display-7">Mobirise gives
-							you the freedom to develop as many websites as you like given the
-							fact that it is a desktop app.</p>
+						<h4 class="card-title mbr-fonts-style display-7">APPLY</h4>
+						<p class="mbr-text mbr-fonts-style display-7">Enter your basic
+							or personal information to get start</p>
+						<br> <br> <br>
 						<div class="mbr-section-btn text-center">
-							<a href="https://mobirise.co" class="btn btn-secondary display-4">
+							<a href="/applyServices" class="btn btn-secondary display-4">
 								More </a>
 						</div>
 					</div>
@@ -221,13 +206,13 @@
 						<span class="mbri-touch mbr-iconfont"></span>
 					</div>
 					<div class="card-box align-center">
-						<h4 class="card-title mbr-fonts-style display-7">Mobile
-							Friendly</h4>
-						<p class="mbr-text mbr-fonts-style display-7">All sites you
-							make with Mobirise are mobile-friendly. You don't have to create
-							a special mobile version of your site.</p>
+						<h4 class="card-title mbr-fonts-style display-7">GET APPROVED</h4>
+						<p class="mbr-text mbr-fonts-style display-7">
+							Link your business data and we will provide you with what you
+							need.<br> <br> <br> <br>
+						</p>
 						<div class="mbr-section-btn text-center">
-							<a href="https://mobirise.co" class="btn btn-secondary display-4">
+							<a href="/getApproved" class="btn btn-secondary display-4">
 								More </a>
 						</div>
 					</div>
@@ -238,33 +223,18 @@
 						<span class="mbri-responsive mbr-iconfont"></span>
 					</div>
 					<div class="card-box align-center">
-						<h4 class="card-title mbr-fonts-style display-7">Unique
-							Styles</h4>
-						<p class="mbr-text mbr-fonts-style display-7">Mobirise offers
-							many site blocks in several themes, and though these blocks are
-							pre-made, they are flexible.</p>
+						<h4 class="card-title mbr-fonts-style display-7">GET FUNDS</h4>
+						<p class="mbr-text mbr-fonts-style display-7">Once approved
+							provide us with your preferred bank account details and your loan
+							will get disbursed at the earilest.</p>
+						<br>
 						<div class="mbr-section-btn text-center">
-							<a href="https://mobirise.co" class="btn btn-secondary display-4">
+							<a href="/getFounds" class="btn btn-secondary display-4">
 								More </a>
 						</div>
 					</div>
 				</div>
 
-				<div class="card  col-12 col-md-6 col-lg-3">
-					<div class="card-img">
-						<span class="mbri-bootstrap mbr-iconfont"></span>
-					</div>
-					<div class="card-box align-center">
-						<h4 class="card-title mbr-fonts-style display-7">No Coding</h4>
-						<p class="mbr-text mbr-fonts-style display-7">Mobirise is an
-							easy website builder - just drop site elements to your page, add
-							content and style it to look the way you like.</p>
-						<div class="mbr-section-btn text-center">
-							<a href="https://mobirise.co" class="btn btn-secondary display-4">
-								More </a>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</section>
@@ -280,10 +250,10 @@
 				<div class="title col-12 col-md-8">
 					<h2
 						class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
-						ARTICLE HEADER</h2>
+						WHY LEADINGBASKET ?</h2>
 					<h3
 						class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">
-						Article header with background image and parallax effect</h3>
+						Its essist way to apply loan</h3>
 
 
 				</div>
@@ -304,11 +274,12 @@
 						<span class="mbri-bootstrap mbr-iconfont"></span>
 					</div>
 					<div class="card-box">
-						<h4 class="card-title py-3 mbr-fonts-style display-5">No
-							Coding</h4>
-						<p class="mbr-text mbr-fonts-style display-7">Mobirise is an
-							easy website builder - just drop site elements to your page, add
-							content and style it to look the way you like.</p>
+						<h4 class="card-title py-3 mbr-fonts-style display-5">
+							Faster Peperless <br> Tranjections
+						</h4>
+						<p class="mbr-text mbr-fonts-style display-7">Time is the most
+							precious asset. So we optimize the use of this asset by providing
+							you with hassle-free documentation and faster loan process.</p>
 					</div>
 				</div>
 
@@ -317,11 +288,12 @@
 						<span class="mbri-touch mbr-iconfont"></span>
 					</div>
 					<div class="card-box">
-						<h4 class="card-title py-3 mbr-fonts-style display-5">Mobile
-							Friendly</h4>
-						<p class="mbr-text mbr-fonts-style display-7">All sites you
-							make with Mobirise are mobile-friendly. You don't have to create
-							a special mobile version of your site.</p>
+						<h4 class="card-title py-3 mbr-fonts-style display-5">
+							24 X 7 <br> Accessibility
+						</h4>
+						<p class="mbr-text mbr-fonts-style display-7">Connectivity
+							helps in building strong business relations. We optimize this
+							relation by having 24x7 accessibility.</p>
 					</div>
 				</div>
 
@@ -330,11 +302,12 @@
 						<span class="mbri-responsive mbr-iconfont"></span>
 					</div>
 					<div class="card-box">
-						<h4 class="card-title py-3 mbr-fonts-style display-5">Unique
-							Styles</h4>
-						<p class="mbr-text mbr-fonts-style display-7">Mobirise offers
-							many site blocks in several themes, and though these blocks are
-							pre-made, they are flexible.</p>
+						<h4 class="card-title py-3 mbr-fonts-style display-5">
+							Effective Guidance At<br> Every Step
+						</h4>
+						<p class="mbr-text mbr-fonts-style display-7">We help you make
+							better and smarter decisions regarding your financial queries at
+							every stage.</p>
 					</div>
 				</div>
 
@@ -356,7 +329,7 @@
 				<div class="col-12 col-md-8">
 					<div class="section-head text-center space30">
 						<h2 class="mbr-section-title pb-5 mbr-fonts-style display-2">
-							Accordion FAQ</h2>
+							According FAQ</h2>
 					</div>
 					<div class="clearfix"></div>
 					<div id="bootstrap-accordion_5"
@@ -369,7 +342,7 @@
 									aria-expanded="false" aria-controls="collapse1">
 									<h4 class="mbr-fonts-style display-5">
 										<span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
-										What is Mobirise?
+										What is Lenading Basket?
 									</h4>
 								</a>
 							</div>
@@ -377,11 +350,20 @@
 								role="tabpanel" aria-labelledby="headingOne"
 								data-parent="#bootstrap-accordion_5">
 								<div class="panel-body p-4">
-									<p class="mbr-fonts-style panel-text display-7">Mobirise is
-										an offline app for Window and Mac to easily create
-										small/medium websites, landing pages, online resumes and
-										portfolios, promo sites for apps, events, services and
-										products.</p>
+									<p class="mbr-fonts-style panel-text display-7">
+									<ul type="square">
+										<li>Lenading Basket provide many facilities to the user
+											like loans, Legal & financial services and tools sitting at
+											home.<br>
+										</li>
+										<li>We provide different types of service to take loan
+											like car loan, home loan, mortgage loan, personal loan<br>
+										</li>
+										<li>Legal services includes rent agreement, leave and
+											license agreement, construction Agreement, extra work
+											agreement, mortgage deed, release deed etc.</li>
+									</ul>
+									</p>
 								</div>
 							</div>
 						</div>
@@ -401,23 +383,30 @@
 								role="tabpanel" aria-labelledby="headingTwo"
 								data-parent="#bootstrap-accordion_5">
 								<div class="panel-body p-4">
-									<p class="mbr-fonts-style panel-text display-7">Mobirise is
-										perfect for non-techies who are not familiar with the
-										intricacies of web development and for designers who prefer to
-										work as visually as possible, without fighting with code. Also
-										great for pro-coders for fast prototyping and small customers'
-										projects.</p>
+									<p class="mbr-fonts-style panel-text display-7">.
+									<ul type="square">
+										<li>Yes, this plateform is for you because you can get
+											any <strong>service at home</strong>
+										</li>
+										<li>This will save you a <strong>lot of time</strong></li>
+										<li>The services we collect from your <strong>favorite
+												bank branch</strong></li>
+										<li>You can use our calculation tools <strong>free</strong>
+											of charge
+										</li>
+									</ul>
+									</p>
 								</div>
 							</div>
 						</div>
-						<div class="card">
+						<!-- <div class="card">
 							<div class="card-header" role="tab" id="headingThree">
 								<a role="button" class="collapsed text-black panel-title"
 									data-toggle="collapse" data-core="" href="#collapse3_5"
 									aria-expanded="false" aria-controls="collapse3">
 									<h4 class="mbr-fonts-style display-5">
 										<span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
-										Why Mobirise?
+										Why ?
 									</h4>
 								</a>
 							</div>
@@ -435,7 +424,7 @@
 								</div>
 							</div>
 						</div>
-
+-->
 
 
 					</div>
@@ -459,15 +448,14 @@
 							<div class="panel-item p-3">
 								<div class="card-img pb-3">
 									<span class="mbri-mobirise mbr-iconfont pr-2"></span>
-									<h3 class="count py-3 mbr-fonts-style display-2">100</h3>
+									<h3 class="count py-3 mbr-fonts-style display-2">${banks}</h3>
 								</div>
 								<div class="card-text">
 									<h4
 										class="mbr-content-title mbr-bold mbr-fonts-style display-7">
-										Unlimited websites</h4>
-									<p class="mbr-content-text mbr-fonts-style display-7">
-										Mobirise give you the freedom to develop as many websites as
-										you like.</p>
+										Connectivity</h4>
+									<p class="mbr-content-text mbr-fonts-style display-7">We
+										connected ${banks}+ banks with satisfy environment.</p>
 								</div>
 							</div>
 						</div>
@@ -475,14 +463,19 @@
 							<div class="panel-item p-3">
 								<div class="card-img pb-3">
 									<span class="mbri-extension mbr-iconfont pr-2"></span>
-									<h3 class="count py-3 mbr-fonts-style display-2">200</h3>
+									<h3 class="count py-3 mbr-fonts-style display-2">
+										<c:out value="${subs}" />
+									</h3>
 								</div>
 								<div class="card-text">
 									<h4
 										class="mbr-content-title mbr-bold mbr-fonts-style display-7">
-										Trendy websites blocks</h4>
+										Subscribers</h4>
 									<p class="mbr-content-text mbr-fonts-style display-7">
-										Choose from the large selection of latest pre-made blocks.</p>
+										Our Services subscribe by
+										<c:out value="${subs}" />
+										users
+									</p>
 								</div>
 							</div>
 						</div>
@@ -490,14 +483,14 @@
 							<div class="panel-item p-3">
 								<div class="card-img pb-3">
 									<span class="mbri-responsive mbr-iconfont pr-2"></span>
-									<h3 class="count py-3 mbr-fonts-style display-2">300</h3>
+									<h3 class="count py-3 mbr-fonts-style display-2">50</h3>
 								</div>
 								<div class="card-text">
 									<h4
 										class="mbr-content-title mbr-bold mbr-fonts-style display-7">
-										Bootstrap</h4>
-									<p class="mbr-content-text mbr-fonts-style display-7">One
-										of Bootstrap's big point is responsiveness</p>
+										EXPERTS</h4>
+									<p class="mbr-content-text mbr-fonts-style display-7">We
+										having 50+ services experts for satisfy your quesions</p>
 								</div>
 							</div>
 						</div>
@@ -505,15 +498,14 @@
 							<div class="panel-item p-3">
 								<div class="card-img pb-3">
 									<span class="mbri-globe-2 mbr-iconfont pr-2"></span>
-									<h3 class="count py-3 mbr-fonts-style display-2">400</h3>
+									<h3 class="count py-3 mbr-fonts-style display-2">${users }</h3>
 								</div>
 								<div class="card-texts">
 									<h4
 										class="mbr-content-title mbr-bold mbr-fonts-style display-7">
-										Web fonts</h4>
-									<p class="mbr-content-text mbr-fonts-style display-7">
-										Mobirise make it easy for you to use Google fonts on your
-										website easily and freely.</p>
+										Customers</h4>
+									<p class="mbr-content-text mbr-fonts-style display-7">We
+										satisfy more then ${users} peoples from our service</p>
 								</div>
 							</div>
 						</div>
@@ -525,96 +517,94 @@
 
 	<section class="footer4 cid-r9c3xhuDfg" id="footer4-p">
 
-
-
-
-
 		<div class="container">
 			<div class="media-container-row content mbr-white">
-				<div class="col-md-3 col-sm-4">
+				<div class="col-md-3 col-sm-2">
 					<div class="mb-3 img-logo">
-						<a href="https://mobirise.co/"> <img
-							src="assets/images/logo21.png" alt="Mobirise">
+						<a href="/"> <img src="assets/images/logo21.png"
+							alt="Lending Basket">
 						</a>
 					</div>
-					<p class="mb-3 mbr-fonts-style foot-title display-7">MOBIRISE</p>
+					<p class="mb-3 mbr-fonts-style foot-title display-7">Lending
+						Basket</p>
 					<p class="mbr-text mbr-fonts-style mbr-links-column display-7">
-						<a href="#" class="text-white">About Us</a> <br>
-						<a href="#" class="text-white">Services</a> <br>
-						<a href="#" class="text-white">Selected Work</a> <br>
-						<a href="#" class="text-white">Get In Touch</a>
+						205, Devraj Mall,<br>Opp Haveli Mandir, India Colony,<br>Thakkarbappanagar,<br>Ahmedabad-382
+						350<br> Phone: +91 92272 18147
+
 					</p>
 				</div>
-				<div class="col-md-4 col-sm-8">
-					<p class="mb-4 foot-title mbr-fonts-style display-7">RECENT
-						NEWS</p>
+				<div class="col-md-2 col-sm-4">
+					<p class="mb-4 foot-title mbr-fonts-style display-7">ENGAGE</p>
 					<p class="mbr-text mbr-fonts-style foot-text display-7">
-						Footer with solid color background and a contact form, Easily add
-						subscribe and contact forms without any server-side integration. <br>
-						<br>Mobirise helps you cut down development time by providing
-						you with a flexible website editor with a drag and drop interface.
+						<a href="" class=" link text-white">Success Stories</a><br>
+						 <a href="" class=" link text-white">Become a Partner</a> <br>
+						  <a href="" class=" link text-white">Find a Partner</a><br>
+					</p>
+				</div>
+				<div class="col-md-2 col-sm-4">
+					<p class="mb-4 foot-title mbr-fonts-style display-7">SUPPORT</p>
+					<p class="mbr-text mbr-fonts-style foot-text display-7">
+						<a href="" class=" link text-white">Help Center</a><br> 
+						<a href="" class="link text-white">Terms &amp; Conditions</a><br>
+						<a href="" class="link text-white">Know Issue</a><br>
+						
 					</p>
 				</div>
 				<div class="col-md-4 offset-md-1 col-sm-12">
 					<p class="mb-4 foot-title mbr-fonts-style display-7">SUBSCRIBE
 					</p>
-					<p class="mbr-text mbr-fonts-style form-text display-7">Get
-						monthly updates and free resources.</p>
-					<div class="media-container-column" data-form-type="formoid">
+					<p class="mbr-text mbr-fonts-style form-text display-7">Get offers and discount in your services</p>
+					<div class="media-container-column">
 						<div data-form-alert="" hidden="" class="align-center">Thanks
 							for filling out the form!</div>
 
-						<form class="form-inline" action="https://mobirise.com/"
-							method="post" data-form-title="Mobirise Form">
-							<input type="hidden"
-								value="CN+nsDB/Y96OGSgCGRbOpMRLieTS4kCCGDfEMhrFeBKPm40DVC3EjWVuK6Os6G7U4aQ3CL2vzZwWf1JbdIwmrFEU5IIqgiv82H7e7r5eev6jsJMdyzw5FDdKUBseRF05"
-								data-form-email="true">
+
+						<form class="form-inline" action="/subscribe" method="post">
+
 							<div class="form-group">
 								<input type="email"
-									class="form-control input-sm input-inverse my-2" name="email"
-									required="" data-form-field="Email" placeholder="Email"
+									class="form-control input-sm input-inverse my-2" name="emid"
+									required="required" data-form-field="emid" placeholder="Email"
 									id="email-footer4-p">
 							</div>
 							<div class="input-group-btn m-2">
-								<button href="" class="btn btn-primary display-4" type="submit"
-									role="button">Subscribe</button>
+								<input class="btn btn-primary display-4" type="submit"
+									role="submit">
 							</div>
 						</form>
+
+
 					</div>
 					<p class="mb-4 mbr-fonts-style foot-title display-7">CONNECT
 						WITH US</p>
 					<div class="social-list pl-0 mb-0">
 						<div class="soc-item">
-							<a href="https://twitter.com/mobirise" target="_blank"> <span
+							<a href=" " target="_blank"> <span
 								class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
 							</a>
 						</div>
 						<div class="soc-item">
-							<a
-								href="https://www.facebook.com/pages/Mobirise/1616226671953247"
-								target="_blank"> <span
+							<a href="#" target="_blank"> <span
 								class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
 							</a>
 						</div>
 						<div class="soc-item">
-							<a href="https://www.youtube.com/c/mobirise" target="_blank">
-								<span
+							<a href="#" target="_blank"> <span
 								class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
 							</a>
 						</div>
 						<div class="soc-item">
-							<a href="https://instagram.com/mobirise" target="_blank"> <span
+							<a href="#" target="_blank"> <span
 								class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
 							</a>
 						</div>
 						<div class="soc-item">
-							<a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
-								<span
+							<a href="#" target="_blank"> <span
 								class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
 							</a>
 						</div>
 						<div class="soc-item">
-							<a href="https://www.behance.net/Mobirise" target="_blank"> <span
+							<a href="#" target="_blank"> <span
 								class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
 							</a>
 						</div>
@@ -626,7 +616,7 @@
 	</section>
 
 
-<script src="assets/web/assets/jquery/jquery.min.js"></script>
+	<script src="assets/web/assets/jquery/jquery.min.js"></script>
 	<script src="assets/popper/popper.min.js"></script>
 	<script src="assets/tether/tether.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>

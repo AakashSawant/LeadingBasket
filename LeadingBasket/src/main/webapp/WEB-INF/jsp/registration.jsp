@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+
 <html>
 <head>
 	<title>LeadingBasket</title>
@@ -16,7 +17,7 @@
 <body>
 <div class="container">
 
-    <form class="well form-horizontal" action="/user/save" method="post" id="contact_form">
+    <form class="well form-horizontal" action="/user/userSave" method="post">
 <fieldset>
 
 <!-- Form Name -->
@@ -29,7 +30,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+  <input  name="first_name" placeholder="First Name" class="form-control"  type="text" required="required">
     </div>
   </div>
 </div>
@@ -42,7 +43,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+  <input name="last_name" placeholder="Last Name" class="form-control"  type="text" required="required" >
     </div>
   </div>
 </div>
@@ -54,7 +55,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="mobile" placeholder="(+91)" class="form-control" type="text">
+  <input name="mobile" placeholder="(+91)" class="form-control" type="text" required="required">
     </div>
   </div>
 </div>
@@ -65,10 +66,11 @@
     <div class="col-md-4">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon glyphicon-calendar"></i></span>
-  <input name="dob" placeholder="dd-mm-yy" class="form-control" type="date">
+  <input name="dob" placeholder="dd-mm-yy" class="form-control" type="date" required="required">
     </div>
   </div>
 </div>
+
 
 <!-- Text input-->
  <div class="form-group">
@@ -76,7 +78,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text" required="required">
     </div>
   </div>
 </div>
@@ -88,7 +90,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <textarea  name="address" class="form-control" rows="5"></textarea>
+  <textarea  name="address" class="form-control" rows="5" required="required"></textarea>
    
     </div>
   </div>
@@ -100,8 +102,8 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		<label class="radio-inline"><input type="radio" value="MALE" name="optradio" checked>MALE</label>
-		<label class="radio-inline"><input type="radio" value="FEMALE" name="optradio">FEMALE</label>
+		<label class="radio-inline"><input type="radio" value="MALE" name="gender" checked>MALE</label>
+		<label class="radio-inline"><input type="radio" value="FEMALE" name="gender">FEMALE</label>
   </div>
   </div>
 </div>
@@ -113,7 +115,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon  glyphicon-pawn"></i></span>
-  <input name="user_password" placeholder="Password" class="form-control"  type="password">
+  <input name="user_password" placeholder="Password" class="form-control"  type="password" required="required">
     </div>
   </div>
 </div>
@@ -124,7 +126,7 @@
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="department" class="form-control selectpicker">
+    <select name="state" class="form-control selectpicker" required="required">
       <option value="">Select State</option>
    		<c:forEach var="state" items="${state}">
    			<option value="${state.id}">${state.state_name}</option>
@@ -140,7 +142,7 @@
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="department" class="form-control selectpicker">
+    <select name="city" class="form-control selectpicker" required="required">
       <option value="">Select City</option>
      		<c:forEach var="city" items="${city}">
    			<option value="${city.id}">${city.city_name}</option>
@@ -154,14 +156,14 @@
 
 <!-- Select Basic -->
 
-<!-- Success message -->
+<!-- Success message 
 <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
 
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-6 control-label"></label>
   <div class="col-md-4"><br>
-    &nbsp&nbsp&nbsp<input type="submit" class="btn btn-warning" value="save">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
   </div>
 </div>
 

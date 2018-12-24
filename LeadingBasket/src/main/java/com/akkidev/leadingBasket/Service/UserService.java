@@ -1,5 +1,6 @@
 package com.akkidev.leadingBasket.Service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.akkidev.leadingBasket.entities.city_master;
@@ -8,7 +9,7 @@ import com.akkidev.leadingBasket.entities.user_master;
 
 public interface UserService {
 
-	public void addUser(user_master user);
+	public void addUser(String fname,String lname,Long mobile,String email,Date dob,String address,int city_id,int state_id,String gender,String password);
 
 	public List<user_master> getUser();
 
@@ -25,4 +26,6 @@ public interface UserService {
 	public city_master getCityById(int id);
 
 	public List<city_master> getCities();
+	
+	public long getUserCount();
 }
