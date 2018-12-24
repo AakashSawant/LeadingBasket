@@ -49,7 +49,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Transactional
 	@Override
-	public List<user_master> getUser() {
+public List<user_master> getUser() {				
 
 		List<user_master> list = em.createQuery("from user_master").getResultList();
 		return list;
