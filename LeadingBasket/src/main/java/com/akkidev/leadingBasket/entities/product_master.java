@@ -2,9 +2,12 @@ package com.akkidev.leadingBasket.entities;
 
 
 
+import java.sql.Blob;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
+import javax.persistence.Lob;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -16,6 +19,8 @@ public class product_master {
 	
 	@NotNull
 	private String name;
+	
+
 		
 	public int getId() {
 		return id;

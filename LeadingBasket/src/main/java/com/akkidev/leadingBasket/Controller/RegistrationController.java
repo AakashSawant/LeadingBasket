@@ -62,5 +62,18 @@ public class RegistrationController {
 		userService.addUser(fname,lname,mobile,email,dob,address,city,state,gender,password);;
 		System.out.println("Creating User " +fname);
 		return "successform";
-	}	
+	}
+	
+	@RequestMapping(value="/userlogin")
+	public String loginUser()
+	{
+		return "loginform";
+	}
+	
+	@RequestMapping(value="/successlogin")
+	public String loginSuccess(String email,String pass)
+	{
+		
+		return "successform";
+	}
 }

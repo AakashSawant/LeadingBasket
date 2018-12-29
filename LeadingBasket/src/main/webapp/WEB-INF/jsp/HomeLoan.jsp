@@ -89,43 +89,67 @@
 				<div class="title col-12 col-md-8">
 					<h2
 						class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
-						NEED A ${title} ?</h2>
+						HOME LOAN <BR> PRE APPROVED</h2>
 					<h3
 						class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">
-						YOU ARE NOT ALONE!</h3>
-
-					<h4
-						class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-4">We
-						offer a wide range of loan products to suit all your requirements
-						ranging from home, mortgage & auto loans for individuals and
-						families to business, machinery and project loans for businesses
-						and corporations.</h4>
+						Select your desired service</h3>
 				</div>
 			</div>
 		</div>
 	</section>
-
-<section class="features1 cid-r8ZWGV6wz8" id="features1-8">
+	<section class="features1 cid-r8ZWGV6wz8" id="features1-8">
 		<div class="container">
-			
 			<div class="media-container-row">
-				<c:forEach items="${lcat1}" var="cat">
+
 				<div class="card p-3 col-12 col-md-6 col-lg-3">
 					<div class="card-img pb-3">
 						<span class="mbri-bootstrap mbr-iconfont"></span>
 					</div>
 					<div class="card-box">
 							<h4 class="card-title py-3 mbr-fonts-style display-5">
-							<a href="${cat.name}" class="link text-black">${cat.name}</a>
+							<a href="${lcats1.name}" class="link text-black"> ${lcats1.name} </a>
 						</h4>
 					</div>
 				</div>
-			</c:forEach>
+
+				<div class="card p-3 col-12 col-md-6 col-lg-3">
+					<div class="card-img pb-3">
+						<span class="mbri-touch mbr-iconfont"></span>
+					</div>
+					<div class="card-box">
+						<h4 class="card-title py-3 mbr-fonts-style display-5">
+							<a href="${lcats2.name}" class="link text-black">${lcats2.name}</a>
+						</h4>
+					</div>
 				</div>
+
+				<div class="card p-3 col-12 col-md-6 col-lg-3">
+					<div class="card-img pb-3">
+						<span class="mbri-responsive mbr-iconfont"></span>
+					</div>
+					<div class="card-box">
+							<h4 class="card-title py-3 mbr-fonts-style display-5">
+							<a href="${lcats3.name}" class="link text-black">${lcats3.name}</a>
+						</h4>
+					</div>
+				</div>
+				
+				<div class="card p-3 col-12 col-md-6 col-lg-3">
+					<div class="card-img pb-3">
+						<span class="mbri-responsive mbr-iconfont"></span>
+					</div>
+					<div class="card-box">
+							<h4 class="card-title py-3 mbr-fonts-style display-5">
+							<a href="${lcats4.name}" class="link text-black">${lcats4.name}</a>
+						</h4>
+					</div>
+				</div>
+			</div>
 
 		</div>
 
 	</section>
+
 
 	<section class="footer4 cid-r9c3xhuDfg" id="footer4-p">
 

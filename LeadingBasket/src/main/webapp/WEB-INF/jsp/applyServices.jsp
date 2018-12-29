@@ -23,10 +23,27 @@
 <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css"
 	type="text/css">
 
+<style type="text/css">
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('assets/images/page-loader.gif') 50% 50% no-repeat
+		rgb(249, 249, 249);
+}
+</style>
 
-
+<script type="text/javascript">
+	$(window).load(function() {
+		$(".loader").fadeOut("slow");
+	})
+</script>
 </head>
 <body>
+	<!-- <div class="loader"></div>-->
 	<section class="menu cid-r9bRLUSb5x" once="menu" id="menu2-9">
 		<nav
 			class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
@@ -87,45 +104,151 @@
 		<div class="container">
 			<div class="media-container-row">
 				<div class="title col-12 col-md-8">
+					<br>
 					<h2
 						class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
-						NEED A ${title} ?</h2>
-					<h3
-						class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">
-						YOU ARE NOT ALONE!</h3>
-
-					<h4
-						class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-4">We
-						offer a wide range of loan products to suit all your requirements
-						ranging from home, mortgage & auto loans for individuals and
-						families to business, machinery and project loans for businesses
-						and corporations.</h4>
+						${title}</h2>
 				</div>
 			</div>
 		</div>
 	</section>
 
-<section class="features1 cid-r8ZWGV6wz8" id="features1-8">
+
+	<section class="accordion1 cid-r9c2PwA95U" id="accordion1-m">
+
 		<div class="container">
-			
 			<div class="media-container-row">
-				<c:forEach items="${lcat1}" var="cat">
-				<div class="card p-3 col-12 col-md-6 col-lg-3">
-					<div class="card-img pb-3">
-						<span class="mbri-bootstrap mbr-iconfont"></span>
+				<div class="col-12 col-md-8">
+					<div class="section-head text-center space30">
+						<h2 class="mbr-section-title pb-5 mbr-fonts-style display-2">
+							Documents</h2>
 					</div>
-					<div class="card-box">
-							<h4 class="card-title py-3 mbr-fonts-style display-5">
-							<a href="${cat.name}" class="link text-black">${cat.name}</a>
-						</h4>
-					</div>
-				</div>
-			</c:forEach>
-				</div>
+					<div class="clearfix"></div>
+					<div id="bootstrap-accordion_5"
+						class="panel-group accordionStyles accordion" role="tablist"
+						aria-multiselectable="true">
+						<div class="card">
+							<div class="card-header" role="tab" id="headingOne">
+								<a role="button" class="panel-title collapsed text-black"
+									data-toggle="collapse" data-core="" href="#collapse1_5"
+									aria-expanded="false" aria-controls="collapse1">
+									<h4 class="mbr-fonts-style display-5">
+										<span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+										Salaried
+									</h4>
+								</a>
+							</div>
+							<div id="collapse1_5" class="panel-collapse noScroll collapse "
+								role="tabpanel" aria-labelledby="headingOne"
+								data-parent="#bootstrap-accordion_5">
+								<div class="panel-body p-4 mbr-fonts-style panel-text display-7">
 
+									<ul type="square">
+										<c:forEach items="${docs}" var="doc" end="18">
+											<li>${doc.name}</li>
+										</c:forEach>
+									</ul>
+
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" role="tab" id="headingTwo">
+								<a role="button" class="collapsed panel-title text-black"
+									data-toggle="collapse" data-core="" href="#collapse2_5"
+									aria-expanded="false" aria-controls="collapse2">
+									<h4 class="mbr-fonts-style display-5">
+										<span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+										Self Employed
+									</h4>
+
+								</a>
+							</div>
+
+							<div id="collapse2_5" class="panel-collapse noScroll collapse"
+								role="tabpanel" aria-labelledby="headingTwo"
+								data-parent="#bootstrap-accordion_5">
+
+								<div class="panel-body p-4 mbr-fonts-style panel-text display-7">
+
+									<ul type="circle">
+										<c:forEach items="${docs}" var="doc">
+											<li>${doc.name}</li>
+										</c:forEach>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-
 	</section>
+	<section class="cid-rdwZRdymN4 mbr-fullscreen mbr-parallax-background"
+		id="header15-c">
+
+
+		<div class="mbr-overlay"
+			style="opacity: 0.5; background-color: rgb(7, 59, 76);"></div>
+
+		<div class="container align-right">
+			<div class="row">
+				<div class="mbr-white col-lg-8 col-md-7 content-container">
+					<h1
+						class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
+						Apply ${title}</h1>
+					<p class="mbr-text pb-3 mbr-fonts-style display-5">
+						Apply ${title} using this Form.<br> Fill The Details
+						Carefully<br>We Contact you and provide this Service
+					</p>
+				</div>
+				<div class="col-lg-4 col-md-5">
+					<div class="form-container">
+						<div class="media-container-column" data-form-type="formoid">
+							<div data-form-alert="" hidden="" class="align-center">
+								Thanks for filling out the form!</div>
+							<form class="mbr-form" action="" method="post"
+								data-form-title="Mobirise Form">
+								<input type="hidden" name="email" data-form-email="true">
+								<div data-for="name">
+									<div class="form-group">
+										<input type="text" class="form-control px-3" name="name"
+											data-form-field="Name" placeholder="Name*"
+											required="required" id="name-header15-c">
+									</div>
+								</div>
+								<div data-for="email">
+									<div class="form-group">
+										<input type="email" class="form-control px-3" name="email"
+											data-form-field="Email" placeholder="Email [Optional]"
+											required="required" id="email-header15-c">
+									</div>
+								</div>
+								<div data-for="phone">
+									<div class="form-group">
+										<input type="tel" class="form-control px-3" name="phone"
+											data-form-field="Phone" placeholder="Phone*"
+											id="phone-header15-c">
+									</div>
+								</div>
+								<div data-for="phone">
+									<div class="form-group">
+										<input type="text" class="form-control px-3" name="amt"
+											data-form-field="Amount" placeholder="Amount*"
+											id="amount-header15-c" required="required">
+									</div>
+								</div>
+								<span class="input-group-btn"><button href=""
+										type="submit" class="btn btn-secondary btn-form display-4">APPLY
+									</button></span>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 
 	<section class="footer4 cid-r9c3xhuDfg" id="footer4-p">
 
@@ -247,9 +370,12 @@
 	<script src="assets/formoid/formoid.min.js"></script>
 
 
+
 	<div id="scrollToTop" class="scrollToTop mbr-arrow-up">
 		<a style="text-align: center;"><i></i></a>
 	</div>
 	<input name="animation" type="hidden">
+
 </body>
+
 </html>

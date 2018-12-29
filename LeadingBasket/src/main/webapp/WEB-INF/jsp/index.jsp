@@ -40,9 +40,9 @@
 			</button>
 			<div class="menu-logo">
 				<div class="navbar-brand">
-					<span class="navbar-logo"> <a href="https://mobirise.co">
-							<img src="assets/images/logo2.png" alt="Mobirise"
-							title="LendingBasket" style="height: 3.8rem;">
+					<span class="navbar-logo"> <a href="">
+							<img src="assets/images/logo2.png" 
+							title="LendingBasket" style="height: 3.8rem; width:3.8rem;">
 					</a>
 					</span> <span class="navbar-caption-wrap"><a
 						class="navbar-caption text-white display-4" href="/">Lending
@@ -72,7 +72,7 @@
 						class="nav-link link text-white display-4" href="/aboutUs">
 							About Us &nbsp;</a></li>
 					<li class="nav-item"><a
-						class="nav-link link text-white display-4" href="/loginUser">Login</a></li>
+						class="nav-link link text-white display-4" href="/user/userlogin">Login</a></li>
 				</ul>
 
 			</div>
@@ -320,9 +320,6 @@
 	</section>
 
 	<section class="accordion1 cid-r9c2PwA95U" id="accordion1-m">
-
-
-
 
 		<div class="container">
 			<div class="media-container-row">

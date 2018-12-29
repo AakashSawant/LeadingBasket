@@ -1,10 +1,14 @@
 package com.akkidev.leadingBasket.entities;
 
 
+import java.sql.Blob;
+
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import javax.validation.constraints.NotNull;
@@ -24,6 +28,10 @@ public class category_master {
 	@JoinColumn(name="product_id")
 	product_master ms;
 	
+	@Column(name="productImage")
+	@Lob
+	private byte[] productImage;
+
 
 	public int getId() {
 		return id;
@@ -55,6 +63,14 @@ public class category_master {
 
 	public void setMs(product_master ms) {
 		this.ms = ms;
+	}
+
+	public byte[] getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(byte[] productImage) {
+		this.productImage = productImage;
 	}
 
 	

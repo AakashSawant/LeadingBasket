@@ -9,7 +9,6 @@ public interface UserDao {
 
 	public void addUser(String fname,String lname,Long mobile,String email,Date dob,String address,int city_id,int state_id,String gender,String password);
 	
-	
 	public List<user_master> getUser();
 
 	public user_master findById(int id);
