@@ -21,7 +21,8 @@ public class SubscribeActivityImpl implements SubcribeActivity {
 	
 	@Override
 	public int addSubscriber(String sb) {
-		return subRepo.addSubscriber(sb);
+
+return subRepo.addSubscriber(sb);
 	}
 
 	@Override

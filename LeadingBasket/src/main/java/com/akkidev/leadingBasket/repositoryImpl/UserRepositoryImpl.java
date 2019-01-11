@@ -19,8 +19,8 @@ public class UserRepositoryImpl implements UserRepository {
 	UserDao userDao;
 	
 	@Override
-	public void addUser(String fname,String lname,Long mobile,String email,Date dob,String address,int city_id,int state_id,String gender,String password) {
-		userDao.addUser(fname,lname,mobile,email,dob,address,city_id,state_id,gender,password);
+	public user_master addUser(String fname,String lname,Long mobile,String email,Date dob,String address,int city_id,int state_id,String gender,String password) {
+		return userDao.addUser(fname,lname,mobile,email,dob,address,city_id,state_id,gender,password);
 		
 	}
 
@@ -76,6 +76,12 @@ public class UserRepositoryImpl implements UserRepository {
 	public long getUserCount() {
 		// TODO Auto-generated method stub
 		return userDao.getUserCount();
+	}
+
+	@Override
+	public user_master findUserByEmailAndPassword(String em, String pass) {
+		// TODO Auto-generated method stub
+		return userDao.findUserByEmailAndPassword(em, pass);
 	}
 
 	

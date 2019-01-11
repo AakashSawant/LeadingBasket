@@ -6,8 +6,13 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
+import org.hibernate.Criteria;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -25,15 +30,14 @@ public class UserDaoImpl implements UserDao {
 
 	@Transactional
 	@Override
-	public void addUser(String fname, String lname, Long mobile, String email, Date dob, String address, int city_id,
-			int state_id, String gender, String password) {
-
+	public user_master addUser(String fname, String lname, Long mobile, String email, Date dob, String address,
+			int city_id, int state_id, String gender, String password) {
 		user_master user = new user_master();
 		city_master ct = em.find(city_master.class, city_id);
 		state_master st = em.find(state_master.class, state_id);
 		user.setFirst_name(fname);
 		user.setLast_name(lname);
-		user.setMobile(mobile);
+		user.setMobile(mobile);	
 		user.setEmail(email);
 		user.setAdderss(address);
 		city_id = ct.getId();
@@ -45,14 +49,18 @@ public class UserDaoImpl implements UserDao {
 		user.setCreate_on(new GregorianCalendar().getTime());
 		user.setCreate_by(fname);
 		em.persist(user);
+		return user;
 	}
 
 	@Transactional
 	@Override
-public List<user_master> getUser() {				
+	public List<user_master> getUser() {
+		CriteriaBuilder builder = em.getCriteriaBuilder();
+		CriteriaQuery<user_master> query = builder.createQuery(user_master.class);
+		Root<user_master> root = query.from(user_master.class);
+		query.select(root);
+		return em.createQuery(query).getResultList();
 
-		List<user_master> list = em.createQuery("from user_master").getResultList();
-		return list;
 	}
 
 	@Transactional
@@ -65,9 +73,7 @@ public List<user_master> getUser() {
 	@Transactional
 	@Override
 	public user_master update(user_master user) {
-
 		return em.merge(user);
-
 	}
 
 	@Transactional
@@ -86,8 +92,11 @@ public List<user_master> getUser() {
 
 	@Override
 	public List<state_master> getState() {
-		List<state_master> states = em.createQuery("from state_master").getResultList();
-		return states;
+		CriteriaBuilder builder = em.getCriteriaBuilder();
+		CriteriaQuery<state_master> criteriaQuery = builder.createQuery(state_master.class);
+		Root<state_master> from = criteriaQuery.from(state_master.class);
+		criteriaQuery.select(from);
+		return em.createQuery(criteriaQuery).getResultList();
 	}
 
 	@Override
@@ -98,15 +107,36 @@ public List<user_master> getUser() {
 
 	@Override
 	public List<city_master> getCities() {
-		// TODO Auto-generated method stub
-		return em.createQuery("from city_master").getResultList();
+		CriteriaBuilder builder = em.getCriteriaBuilder();
+		CriteriaQuery<city_master> criteriaQuery = builder.createQuery(city_master.class);
+		Root<city_master> from = criteriaQuery.from(city_master.class);
+		criteriaQuery.select(from);
+		return em.createQuery(criteriaQuery).getResultList();
+		
 	}
 
 	@Override
 	public long getUserCount() {
-		Query query = em.createQuery("SELECT count(*) FROM user_master");
-		long count = (long) query.getSingleResult();
-		return count;
+		CriteriaBuilder qb = em.getCriteriaBuilder();
+		CriteriaQuery<Long> cq = qb.createQuery(Long.class);
+		cq.select(qb.count(cq.from(user_master.class)));
+		return em.createQuery(cq).getSingleResult();
+	}
+
+	@Transactional
+	@Override
+	public user_master findUserByEmailAndPassword(String email, String pass) {
+		user_master usm = new user_master();
+		usm.setEmail(email);
+		usm.setPassword(pass);
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<user_master> query = cb.createQuery(user_master.class);
+		Root<user_master> root = query.from(user_master.class);
+		query.select(root).where(
+				cb.equal(root.get("email"),email),
+				cb.equal(root.get("password"),pass)
+				);
+		return em.createQuery(query).getSingleResult();
 	}
 
 }

@@ -4,12 +4,16 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.akkidev.leadingBasket.Dao.SubscribeDao;
+import com.akkidev.leadingBasket.entities.bank_master;
 import com.akkidev.leadingBasket.entities.subcribe;
 
 @Service
@@ -37,13 +41,19 @@ public class SubscribeDaoImpl implements SubscribeDao {
 	@Override
 	public List<subcribe> getListSub() {
 
-		return em.createQuery("from subcribe u").getResultList();
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<subcribe> query = cb.createQuery(subcribe.class);
+		Root<subcribe> root = query.from(subcribe.class);
+		query.select(root);
+		return em.createQuery(query).getResultList();
+	
 	}
 
 	public long getSubCount() {
-		Query query = em.createQuery("SELECT count(*) FROM subcribe");
-		long count = (long) query.getSingleResult();
-		return count;
+	CriteriaBuilder builder = em.getCriteriaBuilder();
+	CriteriaQuery<Long> query = builder.createQuery(Long.class);
+	query.select(builder.count(query.from(subcribe.class)));
+	return em.createQuery(query).getSingleResult();
 	}
 
 }

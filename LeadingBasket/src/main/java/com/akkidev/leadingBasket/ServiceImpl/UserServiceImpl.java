@@ -78,10 +78,16 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void addUser(String fname, String lname, Long mobile, String email, Date dob, String address,
+	public user_master addUser(String fname, String lname, Long mobile, String email, Date dob, String address,
 			int city_id, int state_id, String gender, String password) {
 		
-		userActivity.addUser(fname,lname,mobile,email,dob,address,city_id,state_id,gender,password);
+		return userActivity.addUser(fname,lname,mobile,email,dob,address,city_id,state_id,gender,password);
+		
+	}
+
+	@Override
+	public user_master findUserByEmailAndPassword(String em, String pass) {
+		return userActivity.findUserByEmailAndPassword(em, pass);
 		
 	}
 	

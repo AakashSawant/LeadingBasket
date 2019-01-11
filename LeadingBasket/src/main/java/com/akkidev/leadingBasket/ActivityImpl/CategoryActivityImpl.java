@@ -19,9 +19,9 @@ public class CategoryActivityImpl implements CategoryActivity {
 	CategoryRepo catRepo;
 	
 	@Override
-	public List<category_master> getCategories() {
+	public List<category_master> getCategories(int id) {
 		// TODO Auto-generated method stub
-		return catRepo.getCategories();
+		return catRepo.getCategories(id);
 	}
 
 	@Override

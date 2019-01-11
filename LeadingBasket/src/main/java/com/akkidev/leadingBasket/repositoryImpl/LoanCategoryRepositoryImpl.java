@@ -15,12 +15,7 @@ public class LoanCategoryRepositoryImpl implements LoanCategoryRepository {
 	@Autowired
 	LoanCategoryDao loanCategoryDao ;
 	
-	@Override
-	public List<loan_subcategory> getHomeLoanCategories() {
-		
-		return loanCategoryDao.getHomeLoanCategories();
-	}
-
+	
 	@Override
 	public loan_subcategory getHomeLoanCategoryById(int id) {
 		// TODO Auto-generated method stub
@@ -32,16 +27,17 @@ public class LoanCategoryRepositoryImpl implements LoanCategoryRepository {
 		loanCategoryDao.deleteLoanCategoryById(id);
 	}
 
-	@Override
-	public List<loan_subcategory> getMortgageLoan() {
-		// TODO Auto-generated method stub
-		return loanCategoryDao.getMortgageLoan();
-	}
-
+	
 	@Override
 	public loan_subcategory getMortgageLoanCategoryById(int id) {
 		// TODO Auto-generated method stub
 		return loanCategoryDao.getMortgageLoanCategoryById(id);
+	}
+
+	@Override
+	public List<loan_subcategory> getLoanCategories(int id) {
+		// TODO Auto-generated method stub
+		return loanCategoryDao.getLoanCategories(id);
 	}
 
 }

@@ -5,8 +5,10 @@ import java.util.Date;
 import java.util.Map;
 
 import javax.swing.JOptionPane;
+import javax.validation.Validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.bind.validation.ValidationErrors;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +33,7 @@ public class RegistrationController {
 
 	@Autowired
 	UserService userService;
-
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<user_master> getUserById(@PathVariable("id") int id) {
 		System.out.println("Fetching User with id " + id);
@@ -39,6 +41,7 @@ public class RegistrationController {
 		if (user == null) {
 			return new ResponseEntity<user_master>(HttpStatus.NOT_FOUND);
 		}
+		
 		return new ResponseEntity<user_master>(user, HttpStatus.OK);
 
 	}
@@ -53,27 +56,41 @@ public class RegistrationController {
 	}
 
 	@RequestMapping(value="/userSave", method = RequestMethod.POST)
-	public String getUser(@RequestParam("first_name") String fname, @RequestParam("last_name") String lname,
+	public ModelAndView getUser(@RequestParam("first_name") String fname, @RequestParam("last_name") String lname,
 			@RequestParam("mobile") Long mobile,@DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam("dob") Date dob, @RequestParam("email") String email,
 			@RequestParam("address") String address, @RequestParam("gender") String gender,
 			@RequestParam("user_password") String password, @RequestParam("state") int state,
 			@RequestParam("city") int city) {
 		
-		userService.addUser(fname,lname,mobile,email,dob,address,city,state,gender,password);;
+		ModelAndView md = new ModelAndView("successform");
+		md.addObject(userService.addUser(fname,lname,mobile,email,dob,address,city,state,gender,password));
+		md.addObject("msg","Welcome "+fname);
 		System.out.println("Creating User " +fname);
-		return "successform";
+		return md;
 	}
 	
 	@RequestMapping(value="/userlogin")
-	public String loginUser()
+	public ModelAndView loginUser()
 	{
-		return "loginform";
+		ModelAndView md = new ModelAndView("loginform");
+		return md;
 	}
 	
 	@RequestMapping(value="/successlogin")
-	public String loginSuccess(String email,String pass)
+	public ModelAndView loginSuccess(@RequestParam("email")String email,@RequestParam("password")String pass)
 	{
 		
-		return "successform";
+		ModelAndView mdl = new ModelAndView();
+		if(userService.findUserByEmailAndPassword(email, pass)==null)
+		{
+			mdl.addObject("error","Somthing is Wrong");
+			mdl.setViewName("loginform");
+		}
+		else
+		{
+			mdl.addObject(userService.findUserByEmailAndPassword(email, pass));
+			mdl.setViewName("successform");
+		}
+		return mdl;
 	}
 }

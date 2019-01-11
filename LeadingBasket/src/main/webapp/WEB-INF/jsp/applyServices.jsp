@@ -7,9 +7,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Lenading Basket</title>
+<title>Lending Basket</title>
 <link rel="stylesheet"
 	href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+<link rel="icon" href="assets/images/logo2.png" type="image/gif"
+	sizes="16x16">
 <link rel="stylesheet" href="assets/tether/tether.min.css">
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -22,25 +24,21 @@
 <link rel="stylesheet" href="assets/theme/css/style.css">
 <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css"
 	type="text/css">
+<link rel="stylesheet" href="assets2/tether/tether.min.css">
+<link rel="stylesheet"
+	href="assets/datatables/data-tables.bootstrap4.min.css">
 
-<style type="text/css">
-.loader {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url('assets/images/page-loader.gif') 50% 50% no-repeat
-		rgb(249, 249, 249);
-}
-</style>
+<link rel="stylesheet"
+	href="assets2/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet"
+	href="assets2/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="assets2/dropdown/css/style.css">
 
-<script type="text/javascript">
-	$(window).load(function() {
-		$(".loader").fadeOut("slow");
-	})
-</script>
+<link rel="stylesheet" href="assets2/socicon/css/styles.css">
+<link rel="stylesheet" href="assets2/theme/css/style.css">
+<link rel="stylesheet" href="assets2/mobirise/css/mbr-additional.css"
+	type="text/css">
+
 </head>
 <body>
 	<!-- <div class="loader"></div>-->
@@ -55,17 +53,16 @@
 					<span></span> <span></span> <span></span> <span></span>
 				</div>
 			</button>
-			<div class="menu-logo">
+				<div class="menu-logo">
 				<div class="navbar-brand">
-					<span class="navbar-logo"> <a href="https://mobirise.co">
-							<img src="assets/images/logo2.png" alt="Mobirise"
-							title="LendingBasket" style="height: 3.8rem;">
+					<span class="navbar-logo"> <a href="/"> <img
+							src="assets/images/ic1.png" title="LendingBasket"
+							style="height: 3.8rem; width: 10.8rem; margin-left: -1em;padding-left: 10px;">
 					</a>
-					</span> <span class="navbar-caption-wrap"><a
-						class="navbar-caption text-white display-4" href="/">Lending
-							Basket</a></span>
+					</span>
 				</div>
 			</div>
+			
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav nav-dropdown nav-right"
 					data-app-modern-menu="true">
@@ -89,15 +86,11 @@
 						class="nav-link link text-white display-4" href="/aboutUs">
 							About Us &nbsp;</a></li>
 					<li class="nav-item"><a
-						class="nav-link link text-white display-4" href="/loginUser">Login</a></li>
+						class="nav-link link text-white display-4" href="/user/userlogin">Login</a></li>
 				</ul>
 
 			</div>
 		</nav>
-	</section>
-
-	<section class="engine">
-		<a href="/">Loan is Happinezz</a>
 	</section>
 
 	<section class="mbr-section content5 cid-r9c0RcM19Y" id="content5-j">
@@ -204,43 +197,47 @@
 				</div>
 				<div class="col-lg-4 col-md-5">
 					<div class="form-container">
-						<div class="media-container-column" data-form-type="formoid">
-							<div data-form-alert="" hidden="" class="align-center">
-								Thanks for filling out the form!</div>
-							<form class="mbr-form" action="" method="post"
-								data-form-title="Mobirise Form">
-								<input type="hidden" name="email" data-form-email="true">
-								<div data-for="name">
+						<div class="media-container-column">
+
+							<form class="mbr-form" action="/applyNewHome" method="post"
+								id="applyForm">
+
+								<div data-for="first_name">
 									<div class="form-group">
-										<input type="text" class="form-control px-3" name="name"
-											data-form-field="Name" placeholder="Name*"
-											required="required" id="name-header15-c">
+										<input type="text" class="form-control px-3" name="first_name"
+											tabindex="1" id="first_name" data-form-field="first_name"
+											autofocus="autofocus" value="${user.first_name}"
+											readonly="readonly" placeholder="First Name">
 									</div>
 								</div>
 								<div data-for="email">
 									<div class="form-group">
 										<input type="email" class="form-control px-3" name="email"
-											data-form-field="Email" placeholder="Email [Optional]"
-											required="required" id="email-header15-c">
+											autofocus="autofocus" tabindex="2" value="${user.email}"
+											readonly="readonly" data-form-field="Email"
+											placeholder="Email [Optional]" id="email">
 									</div>
 								</div>
 								<div data-for="phone">
 									<div class="form-group">
 										<input type="tel" class="form-control px-3" name="phone"
-											data-form-field="Phone" placeholder="Phone*"
+											data-form-field="phone" placeholder="Phone*"
+											value="${user.mobile}" readonly="readonly"
+											autofocus="autofocus" tabindex="3" required="required"
 											id="phone-header15-c">
 									</div>
 								</div>
-								<div data-for="phone">
+								<div data-for="amount">
 									<div class="form-group">
-										<input type="text" class="form-control px-3" name="amt"
-											data-form-field="Amount" placeholder="Amount*"
-											id="amount-header15-c" required="required">
+										<input type="text" class="form-control px-3" name="amount"
+											data-form-field="amount" placeholder="Amount*"
+											autofocus="autofocus" tabindex="4" required="required">
 									</div>
 								</div>
-								<span class="input-group-btn"><button href=""
-										type="submit" class="btn btn-secondary btn-form display-4">APPLY
-									</button></span>
+								<div class="input-group-btn m-2">
+									<input class="btn btn-primary display-4" type="submit"
+										role="submit">
+								</div>
 							</form>
 						</div>
 					</div>
@@ -248,20 +245,70 @@
 			</div>
 		</div>
 	</section>
+	<section class="section-table cid-remAClIgQm" id="table1-4">
 
 
+		<div class="container container-table">
+			<h2
+				class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">
+				BANKS</h2>
+			<h3 class="mbr-section-subtitle mbr-fonts-style align-center pb-5 mbr-light display-5">
+				We Provide ${title} By Following Banks
+				</h3>
+			<div class="table-wrapper">
+				<div class="container">
+					<div class="row search">
+						<div class="col-md-6"></div>
+						<div class="col-md-6">
+							<div class="dataTables_filter">
+								<label class="searchInfo mbr-fonts-style display-7">Search:</label>
+								<input class="form-control input-sm">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container scroll">
+					<table class="table isSearch" cellspacing="0">
+						<thead>
+							<tr class="table-heads ">
+								<th class="head-item mbr-fonts-style display-7">Bank Name</th>
+								<th class="head-item mbr-fonts-style display-7">File Charge</th>
+								<th class="head-item mbr-fonts-style display-7">Loan
+									Category</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="banks" items="${banks}">
+								<tr>
+									<td class="body-item mbr-fonts-style display-7">
+										${banks.bm.name}</td>
+									<td class="body-item mbr-fonts-style display-7">
+										${banks.file_charge}</td>
+									<td class="body-item mbr-fonts-style display-7">
+										${banks.ls.loan_sub_cat_name}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	
 	<section class="footer4 cid-r9c3xhuDfg" id="footer4-p">
 
 		<div class="container">
 			<div class="media-container-row content mbr-white">
 				<div class="col-md-3 col-sm-2">
-					<div class="mb-3 img-logo">
-						<a href="/"> <img src="assets/images/logo21.png"
-							alt="Lending Basket">
+					<div class="col-sm-1 img-logo">
+						<a href="/"> <img src="assets/images/ic1.png"
+							alt="Lending Basket"
+							style="height: 6.0rem; width: 12.8rem;margin-left: -1em; padding-bottom: 1em;">
 						</a>
 					</div>
-					<p class="mb-3 mbr-fonts-style foot-title display-7">Lending
-						Basket</p>
+
 					<p class="mbr-text mbr-fonts-style mbr-links-column display-7">
 						205, Devraj Mall,<br>Opp Haveli Mandir, India Colony,<br>Thakkarbappanagar,<br>Ahmedabad-382
 						350<br> Phone: +91 92272 18147
@@ -353,9 +400,11 @@
 
 
 	<script src="assets/web/assets/jquery/jquery.min.js"></script>
+	<script src="assets2/web/assets/jquery/jquery.min.js"></script>
 	<script src="assets/popper/popper.min.js"></script>
 	<script src="assets/tether/tether.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets2/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/smoothscroll/smooth-scroll.js"></script>
 	<script src="assets/dropdown/js/script.min.js"></script>
 	<script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
@@ -368,6 +417,8 @@
 	<script src="assets/theme/js/script.js"></script>
 	<script src="assets/slidervideo/script.js"></script>
 	<script src="assets/formoid/formoid.min.js"></script>
+	<script src="assets/datatables/data-tables.bootstrap4.min.js"></script>
+	<script src="assets/datatables/jquery.data-tables.min.js"></script>
 
 
 

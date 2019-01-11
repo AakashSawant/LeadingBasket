@@ -6,8 +6,7 @@ import com.akkidev.leadingBasket.entities.loan_subcategory;
 
 public interface LoanCategoryActivity {
 	
-	public List<loan_subcategory> getHomeLoanCategories();
-	public List<loan_subcategory> getMortgageLoan();
+	public List<loan_subcategory> getLoanCategories(int id);
 	public loan_subcategory getHomeLoanCategoryById(int id);
 	public loan_subcategory getMortgageLoanCategoryById(int id);
 	public void deleteLoanCategoryById(int id);

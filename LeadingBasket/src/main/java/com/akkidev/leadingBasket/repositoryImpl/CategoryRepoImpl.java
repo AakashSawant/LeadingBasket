@@ -16,9 +16,9 @@ public class CategoryRepoImpl implements CategoryRepo {
 	categoryDao catDao;
 	
 	@Override
-	public List<category_master> getCategories() {
+	public List<category_master> getCategories(int id) {
 		// TODO Auto-generated method stub
-		return catDao.getCategories();
+		return catDao.getCategories(id);
 	}
 
 	@Override

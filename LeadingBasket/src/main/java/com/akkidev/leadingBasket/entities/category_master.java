@@ -20,7 +20,7 @@ public class category_master {
 	private int id;
 	
 	@NotNull
-	private String name;
+	private String loan_sub_cat_name;
 	
 	private Long charge;
 	
@@ -41,12 +41,12 @@ public class category_master {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getLoan_sub_cat_name() {
+		return loan_sub_cat_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setLoan_sub_cat_name(String loan_sub_cat_name) {
+		this.loan_sub_cat_name = loan_sub_cat_name;
 	}
 
 	public Long getCharge() {

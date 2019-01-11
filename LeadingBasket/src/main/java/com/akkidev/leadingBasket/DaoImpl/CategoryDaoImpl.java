@@ -1,14 +1,13 @@
 package com.akkidev.leadingBasket.DaoImpl;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
-import java.sql.Blob;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,16 +20,20 @@ public class CategoryDaoImpl implements categoryDao {
 
 	@Autowired
 	EntityManager em;
-	
+
 	@Override
-	public List<category_master> getCategories() {
-		
-		return em.createQuery("from category_master where product_id=1").getResultList();
+	public List<category_master> getCategories(int id) {
+
+		CriteriaBuilder builder = em.getCriteriaBuilder();
+		CriteriaQuery<category_master> query = builder.createQuery(category_master.class);
+		Root<category_master> root = query.from(category_master.class);
+		query.select(root).where(builder.equal(root.get("ms"), id));
+		return em.createQuery(query).getResultList();
 	}
 
 	@Override
 	public category_master getCategoryById(int id) {
-		
+
 		return em.find(category_master.class, id);
 	}
 

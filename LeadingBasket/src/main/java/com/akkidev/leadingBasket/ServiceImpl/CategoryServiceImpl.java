@@ -19,9 +19,9 @@ public class CategoryServiceImpl implements CategoryService {
 	CategoryActivity catActivity;
 	
 	@Override
-	public List<category_master> getCategories() {
+	public List<category_master> getCategories(int id) {
 		// TODO Auto-generated method stub
-		return catActivity.getCategories();
+		return catActivity.getCategories(id);
 	}
 
 	@Override

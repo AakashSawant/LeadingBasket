@@ -3,6 +3,9 @@ package com.akkidev.leadingBasket.DaoImpl;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +23,18 @@ public class DocumentDaoImpl implements DocumentDao {
 	
 	@Override
 	public List<document_master> getDocuments() {
-		// TODO Auto-generated method stub
-		return em.createQuery("from document_master").getResultList();
+		
+		//return em.createQuery("from document_master").getResultList();
+		CriteriaBuilder builder = em.getCriteriaBuilder();
+		CriteriaQuery< document_master> query = builder.createQuery(document_master.class);
+		Root<document_master> root = query.from(document_master.class);
+		query.select(root);
+		return em.createQuery(query).getResultList();
 	}
 
 	@Override
 	public document_master getDocumentByCategory(int id) {
-		// TODO Auto-generated method stub
+	
 		return em.find(document_master.class, id);
 	}
 
@@ -40,5 +48,6 @@ public class DocumentDaoImpl implements DocumentDao {
 	
 		
 	}
+	
 
 }

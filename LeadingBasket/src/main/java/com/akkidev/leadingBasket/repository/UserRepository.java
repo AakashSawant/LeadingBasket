@@ -9,11 +9,13 @@ import com.akkidev.leadingBasket.entities.user_master;
 
 public interface UserRepository {
 
-	public void addUser(String fname,String lname,Long mobile,String email,Date dob,String address,int city_id,int state_id,String gender,String password);
+	public user_master addUser(String fname,String lname,Long mobile,String email,Date dob,String address,int city_id,int state_id,String gender,String password);
 
 	public List<user_master> getUser();
 
 	public user_master findById(int id);
+	
+	public user_master findUserByEmailAndPassword(String em,String pass);
 
 	public user_master update(user_master user);
 	

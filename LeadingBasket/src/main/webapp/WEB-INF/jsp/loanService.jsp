@@ -7,9 +7,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Lenading Basket</title>
+<title>Lending Basket</title>
 <link rel="stylesheet"
 	href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+	<link rel="icon" href="assets/images/logo2.png" type="image/gif" sizes="16x16">
 <link rel="stylesheet" href="assets/tether/tether.min.css">
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -22,7 +23,6 @@
 <link rel="stylesheet" href="assets/theme/css/style.css">
 <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css"
 	type="text/css">
-
 
 
 </head>
@@ -38,17 +38,16 @@
 					<span></span> <span></span> <span></span> <span></span>
 				</div>
 			</button>
-			<div class="menu-logo">
+				<div class="menu-logo">
 				<div class="navbar-brand">
-					<span class="navbar-logo"> <a href="https://mobirise.co">
-							<img src="assets/images/logo2.png" alt="Mobirise"
-							title="LendingBasket" style="height: 3.8rem;">
+					<span class="navbar-logo"> <a href="/"> <img
+							src="assets/images/ic1.png" title="LendingBasket"
+							style="height: 3.8rem; width: 10.8rem; margin-left: -1em;">
 					</a>
-					</span> <span class="navbar-caption-wrap"><a
-						class="navbar-caption text-white display-4" href="/">Lending
-							Basket</a></span>
+					</span>
 				</div>
 			</div>
+			
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav nav-dropdown nav-right"
 					data-app-modern-menu="true">
@@ -72,7 +71,7 @@
 						class="nav-link link text-white display-4" href="/aboutUs">
 							About Us &nbsp;</a></li>
 					<li class="nav-item"><a
-						class="nav-link link text-white display-4" href="/loginUser">Login</a></li>
+						class="nav-link link text-white display-4" href="/user/userlogin">Login</a></li>
 				</ul>
 
 			</div>
@@ -105,26 +104,27 @@
 		</div>
 	</section>
 
-<section class="features1 cid-r8ZWGV6wz8" id="features1-8">
+	<section class="features1 cid-r8ZWGV6wz8" id="features1-8">
 		<div class="container">
-			
+
 			<div class="media-container-row">
 				<c:forEach items="${lcat1}" var="cat">
-				<div class="card p-3 col-12 col-md-6 col-lg-3">
-					<div class="card-img pb-3">
-						<span class="mbri-bootstrap mbr-iconfont"></span>
-					</div>
-					<div class="card-box">
+					<div class="card p-3 col-12 col-md-6 col-lg-3">
+						<div class="card-img pb-3">
+							<a href="${cat.loan_sub_cat_name}"> <img
+								src="assets/images/logo2.png" class="img-rounded"
+								alt="Cinque Terre"></a>
+						</div>
+						<div class="card-box">
 							<h4 class="card-title py-3 mbr-fonts-style display-5">
-							<a href="${cat.name}" class="link text-black">${cat.name}</a>
-						</h4>
+								<a href="${cat.loan_sub_cat_name}" class="link text-black">${cat.loan_sub_cat_name}</a>
+							</h4>
+						</div>
 					</div>
-				</div>
-			</c:forEach>
-				</div>
+				</c:forEach>
+			</div>
 
 		</div>
-
 	</section>
 
 	<section class="footer4 cid-r9c3xhuDfg" id="footer4-p">
@@ -132,13 +132,12 @@
 		<div class="container">
 			<div class="media-container-row content mbr-white">
 				<div class="col-md-3 col-sm-2">
-					<div class="mb-3 img-logo">
-						<a href="/"> <img src="assets/images/logo21.png"
-							alt="Lending Basket">
+					<div class="col-sm-1 img-logo">
+						<a href="/"> <img src="assets/images/ic1.png"
+							alt="Lending Basket"
+							style="height: 6.0rem; width: 12.8rem; margin-left: -1em; padding-bottom: 1em;">
 						</a>
 					</div>
-					<p class="mb-3 mbr-fonts-style foot-title display-7">Lending
-						Basket</p>
 					<p class="mbr-text mbr-fonts-style mbr-links-column display-7">
 						205, Devraj Mall,<br>Opp Haveli Mandir, India Colony,<br>Thakkarbappanagar,<br>Ahmedabad-382
 						350<br> Phone: +91 92272 18147
@@ -245,7 +244,6 @@
 	<script src="assets/theme/js/script.js"></script>
 	<script src="assets/slidervideo/script.js"></script>
 	<script src="assets/formoid/formoid.min.js"></script>
-
 
 	<div id="scrollToTop" class="scrollToTop mbr-arrow-up">
 		<a style="text-align: center;"><i></i></a>

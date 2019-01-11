@@ -20,12 +20,7 @@ public class LoanCategoryActivityImpl implements LoanCategoryActivity {
 	@Autowired
 	LoanCategoryRepository loanCategoryRepository;
 	
-	@Override
-	public List<loan_subcategory> getHomeLoanCategories() {
-		// TODO Auto-generated method stub
-		return loanCategoryRepository.getHomeLoanCategories();
-	}
-
+	
 	@Override
 	public loan_subcategory getHomeLoanCategoryById(int id) {
 		// TODO Auto-generated method stub
@@ -38,16 +33,17 @@ public class LoanCategoryActivityImpl implements LoanCategoryActivity {
 		
 	}
 
-	@Override
-	public List<loan_subcategory> getMortgageLoan() {
-		
-		return loanCategoryRepository.getMortgageLoan();
-	}
 
 	@Override
 	public loan_subcategory getMortgageLoanCategoryById(int id) {
 		// TODO Auto-generated method stub
 		return loanCategoryRepository.getMortgageLoanCategoryById(id);
+	}
+
+	@Override
+	public List<loan_subcategory> getLoanCategories(int id) {
+		
+		return loanCategoryRepository.getLoanCategories(id);
 	}
 	
 

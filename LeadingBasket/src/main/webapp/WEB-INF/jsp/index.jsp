@@ -7,9 +7,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Lenading Basket</title>
+<title>Lending Basket</title>
 <link rel="stylesheet"
 	href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+<link rel="icon" href="assets/images/logo2.png" type="image/gif"
+	sizes="16x16">
 <link rel="stylesheet" href="assets/tether/tether.min.css">
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -22,9 +24,6 @@
 <link rel="stylesheet" href="assets/theme/css/style.css">
 <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css"
 	type="text/css">
-
-
-
 </head>
 <body>
 	<section class="menu cid-r9bRLUSb5x" once="menu" id="menu2-9">
@@ -40,13 +39,11 @@
 			</button>
 			<div class="menu-logo">
 				<div class="navbar-brand">
-					<span class="navbar-logo"> <a href="">
-							<img src="assets/images/logo2.png" 
-							title="LendingBasket" style="height: 3.8rem; width:3.8rem;">
+					<span class="navbar-logo"> <a href=""> <img
+							src="assets/images/ic1.png" title="LendingBasket"
+							style="height: 3.8rem; width: 10.8rem; margin-left: -1em;">
 					</a>
-					</span> <span class="navbar-caption-wrap"><a
-						class="navbar-caption text-white display-4" href="/">Lending
-							Basket</a></span>
+					</span>
 				</div>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -79,13 +76,8 @@
 		</nav>
 	</section>
 
-	<section class="engine">
-		<a href="/">Loan is Happinezz</a>
-	</section>
 	<section class="carousel slide cid-r9bXovczpT" data-interval="false"
 		id="slider1-c">
-
-
 
 		<div class="full-screen">
 			<div class="mbr-slider slide carousel" data-pause="true"
@@ -517,13 +509,13 @@
 		<div class="container">
 			<div class="media-container-row content mbr-white">
 				<div class="col-md-3 col-sm-2">
-					<div class="mb-3 img-logo">
-						<a href="/"> <img src="assets/images/logo21.png"
-							alt="Lending Basket">
+					<div class="col-sm-1 img-logo">
+						<a href="/"> <img src="assets/images/ic1.png"
+							alt="Lending Basket"
+							style="height: 4.0rem; width: 10.8rem; margin-left: -1em;">
 						</a>
 					</div>
-					<p class="mb-3 mbr-fonts-style foot-title display-7">Lending
-						Basket</p>
+					<p class="mb-3 mbr-fonts-style foot-title display-7"></p>
 					<p class="mbr-text mbr-fonts-style mbr-links-column display-7">
 						205, Devraj Mall,<br>Opp Haveli Mandir, India Colony,<br>Thakkarbappanagar,<br>Ahmedabad-382
 						350<br> Phone: +91 92272 18147
@@ -533,24 +525,25 @@
 				<div class="col-md-2 col-sm-4">
 					<p class="mb-4 foot-title mbr-fonts-style display-7">ENGAGE</p>
 					<p class="mbr-text mbr-fonts-style foot-text display-7">
-						<a href="" class=" link text-white">Success Stories</a><br>
-						 <a href="" class=" link text-white">Become a Partner</a> <br>
-						  <a href="" class=" link text-white">Find a Partner</a><br>
+						<a href="" class=" link text-white">Success Stories</a><br> <a
+							href="" class=" link text-white">Become a Partner</a> <br> <a
+							href="" class=" link text-white">Find a Partner</a><br>
 					</p>
 				</div>
 				<div class="col-md-2 col-sm-4">
 					<p class="mb-4 foot-title mbr-fonts-style display-7">SUPPORT</p>
 					<p class="mbr-text mbr-fonts-style foot-text display-7">
-						<a href="" class=" link text-white">Help Center</a><br> 
-						<a href="" class="link text-white">Terms &amp; Conditions</a><br>
+						<a href="" class=" link text-white">Help Center</a><br> <a
+							href="" class="link text-white">Terms &amp; Conditions</a><br>
 						<a href="" class="link text-white">Know Issue</a><br>
-						
+
 					</p>
 				</div>
 				<div class="col-md-4 offset-md-1 col-sm-12">
 					<p class="mb-4 foot-title mbr-fonts-style display-7">SUBSCRIBE
 					</p>
-					<p class="mbr-text mbr-fonts-style form-text display-7">Get offers and discount in your services</p>
+					<p class="mbr-text mbr-fonts-style form-text display-7">Get
+						offers and discount in your services</p>
 					<div class="media-container-column">
 						<div data-form-alert="" hidden="" class="align-center">Thanks
 							for filling out the form!</div>

@@ -3,6 +3,7 @@ package com.akkidev.leadingBasket.entities;
 
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -17,7 +18,8 @@ public class loan_subcategory {
 	private int id;
 	
 	@NotNull
-	private String name;
+	@Column(name="loan_sub_cat_name")
+	private String loan_sub_cat_name;
 	
 	@ManyToOne(targetEntity=category_master.class,cascade=CascadeType.ALL)
 	@JoinColumn(name="category_id")
@@ -32,12 +34,13 @@ public class loan_subcategory {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	
+	public String getLoan_sub_cat_name() {
+		return loan_sub_cat_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setLoan_sub_cat_name(String loan_sub_cat_name) {
+		this.loan_sub_cat_name = loan_sub_cat_name;
 	}
 
 	public category_master getCm() {

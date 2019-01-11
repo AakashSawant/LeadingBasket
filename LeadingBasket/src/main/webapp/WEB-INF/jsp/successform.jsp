@@ -9,7 +9,9 @@
 
 </head>
 <body>
-<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+<div class="alert alert-success ">Success <i class="glyphicon glyphicon-thumbs-up"></i> ${ msg } 
+	<h4 style="text-align: right; font-family: cursive;"><a href="/"> Go To Home Page</a></h4>
+</div>
 	
 </body>
 </html>

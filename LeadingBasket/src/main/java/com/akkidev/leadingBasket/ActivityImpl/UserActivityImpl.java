@@ -23,9 +23,9 @@ public class UserActivityImpl implements UserActivity {
 	
 	
 	@Override
-	public void addUser(String fname,String lname,Long mobile,String email,Date dob,String address,int city_id,int state_id,String gender,String password) {
+	public user_master addUser(String fname,String lname,Long mobile,String email,Date dob,String address,int city_id,int state_id,String gender,String password) {
 		
-		userRepo.addUser(fname,lname,mobile,email,dob,address,city_id,state_id,gender,password);
+		return userRepo.addUser(fname,lname,mobile,email,dob,address,city_id,state_id,gender,password);
 			
 	}
 
@@ -81,6 +81,12 @@ public class UserActivityImpl implements UserActivity {
 	public long getUserCount() {
 		// TODO Auto-generated method stub
 		return userRepo.getUserCount();
+	}
+
+	@Override
+	public user_master findUserByEmailAndPassword(String em, String pass) {
+		// TODO Auto-generated method stub
+		return userRepo.findUserByEmailAndPassword(em, pass);
 	}
 
 }
