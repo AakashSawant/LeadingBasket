@@ -9,20 +9,20 @@
 <meta charset="ISO-8859-1">
 <title>Lending Basket</title>
 <link rel="stylesheet"
-	href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-<link rel="icon" href="assets/images/logo2.png" type="image/gif"
+	href="../assets/web/assets/mobirise-icons/mobirise-icons.css">
+<link rel="icon" href="../assets/images/logo2.png" type="image/gif"
 	sizes="16x16">
-<link rel="stylesheet" href="assets/tether/tether.min.css">
-<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/tether/tether.min.css">
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="assets/bootstrap/css/bootstrap-grid.min.css">
+	href="../assets/bootstrap/css/bootstrap-grid.min.css">
 <link rel="stylesheet"
-	href="assets/bootstrap/css/bootstrap-reboot.min.css">
-<link rel="stylesheet" href="assets/dropdown/css/style.css">
-<link rel="stylesheet" href="assets/animatecss/animate.min.css">
-<link rel="stylesheet" href="assets/socicon/css/styles.css">
-<link rel="stylesheet" href="assets/theme/css/style.css">
-<link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css"
+	href="../assets/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="../assets/dropdown/css/style.css">
+<link rel="stylesheet" href="../assets/animatecss/animate.min.css">
+<link rel="stylesheet" href="../assets/socicon/css/styles.css">
+<link rel="stylesheet" href="../assets/theme/css/style.css">
+<link rel="stylesheet" href="../assets/mobirise/css/mbr-additional.css"
 	type="text/css">
 </head>
 <body>
@@ -40,7 +40,7 @@
 			<div class="menu-logo">
 				<div class="navbar-brand">
 					<span class="navbar-logo"> <a href=""> <img
-							src="assets/images/ic1.png" title="LendingBasket"
+							src="../assets/images/ic1.png" title="LendingBasket"
 							style="height: 3.8rem; width: 10.8rem; margin-left: -1em;">
 					</a>
 					</span>
@@ -68,8 +68,18 @@
 					<li class="nav-item"><a
 						class="nav-link link text-white display-4" href="/aboutUs">
 							About Us &nbsp;</a></li>
-					<li class="nav-item"><a
-						class="nav-link link text-white display-4" href="/userlogin">Login</a></li>
+					
+					<li class="nav-item dropdown"><a
+						class="nav-link link text-white dropdown-toggle display-4"
+						data-toggle="dropdown-submenu" aria-expanded="false">${usname.first_name}</a>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="text-white dropdown-item display-4"
+								href="/editprof">Edit Profile</a><a
+								class="text-white dropdown-item display-4"
+								href="/resAct" aria-expanded="false">View Recent Activities</a><a
+								class="text-white dropdown-item display-4"
+								href="/logout" aria-expanded="false">Log Out</a>
+						</div></li>
 				</ul>
 
 			</div>
@@ -93,11 +103,11 @@
 				<div class="carousel-inner" role="listbox">
 					<div class="carousel-item slider-fullscreen-image active"
 						data-bg-video-slide="false"
-						style="background-image: url(assets/images/1.jpg);">
+						style="background-image: url(../assets/images/1.jpg);">
 						<div class="container container-slide">
 							<div class="image_wrapper">
 								<div class="mbr-overlay"></div>
-								<img src="assets/images/1.jpg">
+								<img src="../assets/images/1.jpg">
 								<div class="carousel-caption justify-content-center">
 									<div class="col-10 align-center">
 										<h2 class="mbr-fonts-style display-1">LOAN SERVICE</h2>
@@ -116,7 +126,7 @@
 						data-bg-video-slide="https://www.youtube.com/watch?v=fwkKc6M60-0">
 						<div class="container container-slide">
 							<div class="image_wrapper">
-								<img src="assets/images/2.jpg" style="opacity: 0;">
+								<img src="../assets/images/2.jpg" style="opacity: 0;">
 								<div class="carousel-caption justify-content-center">
 									<div class="col-10 align-left">
 										<h2 class="mbr-fonts-style display-1">FINANCIAL SERVICE</h2>
@@ -133,11 +143,11 @@
 					</div>
 					<div class="carousel-item slider-fullscreen-image"
 						data-bg-video-slide="false"
-						style="background-image: url(assets/images/3.jpg);">
+						style="background-image: url(../assets/images/3.jpg);">
 						<div class="container container-slide">
 							<div class="image_wrapper">
 								<div class="mbr-overlay"></div>
-								<img src="assets/images/3.jpg">
+								<img src="../assets/images/3.jpg">
 								<div class="carousel-caption justify-content-center">
 									<div class="col-10 align-right">
 										<h2 class="mbr-fonts-style display-1">ONLINE OR OFFLINE</h2>
@@ -510,7 +520,7 @@
 			<div class="media-container-row content mbr-white">
 				<div class="col-md-3 col-sm-2">
 					<div class="col-sm-1 img-logo">
-						<a href="/"> <img src="assets/images/ic1.png"
+						<a href="/"> <img src="../assets/images/ic1.png"
 							alt="Lending Basket"
 							style="height: 4.0rem; width: 10.8rem; margin-left: -1em;">
 						</a>
@@ -606,22 +616,22 @@
 	</section>
 
 
-	<script src="assets/web/assets/jquery/jquery.min.js"></script>
-	<script src="assets/popper/popper.min.js"></script>
-	<script src="assets/tether/tether.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/smoothscroll/smooth-scroll.js"></script>
-	<script src="assets/dropdown/js/script.min.js"></script>
-	<script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-	<script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
-	<script src="assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
-	<script src="assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
-	<script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
-	<script src="assets/parallax/jarallax.min.js"></script>
-	<script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
-	<script src="assets/theme/js/script.js"></script>
-	<script src="assets/slidervideo/script.js"></script>
-	<script src="assets/formoid/formoid.min.js"></script>
+	<script src="../assets/web/assets/jquery/jquery.min.js"></script>
+	<script src="../assets/popper/popper.min.js"></script>
+	<script src="../assets/tether/tether.min.js"></script>
+	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../assets/smoothscroll/smooth-scroll.js"></script>
+	<script src="../assets/dropdown/js/script.min.js"></script>
+	<script src="../assets/touchswipe/jquery.touch-swipe.min.js"></script>
+	<script src="../assets/viewportchecker/jquery.viewportchecker.js"></script>
+	<script src="../assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
+	<script src="../assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+	<script src="../assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+	<script src="../assets/parallax/jarallax.min.js"></script>
+	<script src="../assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
+	<script src="../assets/theme/js/script.js"></script>
+	<script src="../assets/slidervideo/script.js"></script>
+	<script src="../assets/formoid/formoid.min.js"></script>
 
 
 	<div id="scrollToTop" class="scrollToTop mbr-arrow-up">

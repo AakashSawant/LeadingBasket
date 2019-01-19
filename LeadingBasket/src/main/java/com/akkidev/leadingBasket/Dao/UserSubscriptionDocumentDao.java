@@ -12,7 +12,7 @@ public interface UserSubscriptionDocumentDao {
 
 	List<user_subscription_doc> findAllByUserId(int id);
 
-	void saveDocument(user_subscription_doc document);
+	public user_subscription_doc saveDocument(int usID,String pdf_name,String photo_name);
 
-	void deleteById(int id);
+	user_subscription_doc deleteById(int id);
 }

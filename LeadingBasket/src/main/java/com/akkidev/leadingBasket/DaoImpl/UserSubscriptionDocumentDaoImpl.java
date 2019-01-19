@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.akkidev.leadingBasket.Dao.UserSubscriptionDocumentDao;
+import com.akkidev.leadingBasket.entities.user_subscription;
 import com.akkidev.leadingBasket.entities.user_subscription_doc;
 
 @Service
@@ -47,15 +48,20 @@ public class UserSubscriptionDocumentDaoImpl implements UserSubscriptionDocument
 	}
 
 	@Override
-	public void saveDocument(user_subscription_doc document) {
-		entityManager.persist(document);
-		
+	public user_subscription_doc saveDocument(int usID,String pdf_name,String photo_name) {
+			
+			user_subscription_doc usDoc = new user_subscription_doc();
+			usDoc.setUs(entityManager.find(user_subscription.class, usID));
+			usDoc.setPhoto_name(photo_name);
+			usDoc.setPdf_name(pdf_name);
+			entityManager.persist(usDoc);
+			return usDoc;
 	}
 
 	@Override
-	public void deleteById(int id) {
-		entityManager.remove(findById(id));
+	public user_subscription_doc deleteById(int id) {
 		
+		return entityManager.find(user_subscription_doc.class, id) ;
 	}
 
 }

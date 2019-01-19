@@ -1,15 +1,14 @@
 package com.akkidev.leadingBasket.entities;
 
-import javax.persistence.Basic;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
+
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
@@ -17,30 +16,17 @@ import javax.validation.constraints.NotNull;
 public class user_subscription_doc {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 	@ManyToOne(targetEntity = user_subscription_doc.class, cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_sub_id")
 	private user_subscription us;
-	
+
 	private String photo_name;
 
 	@NotNull
 	private String pdf_name;
-	
-	@Lob @Basic(fetch=FetchType.LAZY)
-	@Column(name="PDF")
-	private byte[] content; 
-
-	
-	public byte[] getContent() {
-		return content;
-	}
-
-	public void setContent(byte[] content) {
-		this.content = content;
-	}
 
 	public int getId() {
 		return id;

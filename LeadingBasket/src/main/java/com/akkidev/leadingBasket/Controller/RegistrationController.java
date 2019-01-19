@@ -22,18 +22,29 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.akkidev.leadingBasket.Service.BankService;
+import com.akkidev.leadingBasket.Service.SubscribeService;
 import com.akkidev.leadingBasket.Service.UserService;
+import com.akkidev.leadingBasket.ServiceImpl.ProductServiceImpl;
 import com.akkidev.leadingBasket.entities.city_master;
 import com.akkidev.leadingBasket.entities.state_master;
 import com.akkidev.leadingBasket.entities.user_master;
 
 @Controller
-@RequestMapping(value= {"/user"})
 public class RegistrationController {
 
 	@Autowired
 	UserService userService;
-	
+
+	@Autowired
+	ProductServiceImpl prService;
+
+	@Autowired
+	SubscribeService subService;
+
+	@Autowired
+	BankService bankService;
+
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<user_master> getUserById(@PathVariable("id") int id) {
 		System.out.println("Fetching User with id " + id);
@@ -41,7 +52,7 @@ public class RegistrationController {
 		if (user == null) {
 			return new ResponseEntity<user_master>(HttpStatus.NOT_FOUND);
 		}
-		
+
 		return new ResponseEntity<user_master>(user, HttpStatus.OK);
 
 	}
@@ -51,46 +62,49 @@ public class RegistrationController {
 		modelAndView.addObject("user", user);
 		modelAndView.addObject("city", userService.getCities());
 		modelAndView.addObject("state", userService.getState());
-		modelAndView.setViewName("registration");	
+		modelAndView.setViewName("registration");
 		return modelAndView;
 	}
 
-	@RequestMapping(value="/userSave", method = RequestMethod.POST)
+	@RequestMapping(value = "/userSave", method = RequestMethod.POST)
 	public ModelAndView getUser(@RequestParam("first_name") String fname, @RequestParam("last_name") String lname,
-			@RequestParam("mobile") Long mobile,@DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam("dob") Date dob, @RequestParam("email") String email,
-			@RequestParam("address") String address, @RequestParam("gender") String gender,
-			@RequestParam("user_password") String password, @RequestParam("state") int state,
-			@RequestParam("city") int city) {
-		
+			@RequestParam("mobile") Long mobile, @DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam("dob") Date dob,
+			@RequestParam("email") String email, @RequestParam("address") String address,
+			@RequestParam("gender") String gender, @RequestParam("user_password") String password,
+			@RequestParam("state") int state, @RequestParam("city") int city) {
+
 		ModelAndView md = new ModelAndView("successform");
-		md.addObject(userService.addUser(fname,lname,mobile,email,dob,address,city,state,gender,password));
-		md.addObject("msg","Welcome "+fname);
-		System.out.println("Creating User " +fname);
+		md.addObject(userService.addUser(fname, lname, mobile, email, dob, address, city, state, gender, password));
+		md.addObject("msg", "Welcome " + fname);
+		System.out.println("Creating User " + fname);
 		return md;
 	}
-	
-	@RequestMapping(value="/userlogin")
-	public ModelAndView loginUser()
-	{
+
+	@RequestMapping(value = "/userlogin")
+	public ModelAndView loginUser() {
 		ModelAndView md = new ModelAndView("loginform");
 		return md;
 	}
-	
-	@RequestMapping(value="/successlogin")
-	public ModelAndView loginSuccess(@RequestParam("email")String email,@RequestParam("password")String pass)
-	{
-		
+
+	@RequestMapping(value = "/successlogin")
+	public ModelAndView loginSuccess(@RequestParam("email") String email, @RequestParam("password") String pass) {
+
 		ModelAndView mdl = new ModelAndView();
-		if(userService.findUserByEmailAndPassword(email, pass)==null)
-		{
-			mdl.addObject("error","Somthing is Wrong");
-			mdl.setViewName("loginform");
-		}
-		else
-		{
-			mdl.addObject(userService.findUserByEmailAndPassword(email, pass));
-			mdl.setViewName("successform");
-		}
+		mdl.addObject("error", "Somthing is Wrong");
+		mdl.addObject("services", prService.getServices());
+		mdl.addObject("users", userService.getUserCount());
+		mdl.addObject("subs", subService.getSubCount());
+		mdl.addObject("banks", bankService.getBankCount());
+		mdl.addObject("usname", userService.findUserByEmailAndPassword(email, pass));
+		mdl.setViewName("indexlogin");
 		return mdl;
+	}
+	
+	@RequestMapping("/editprof")
+	public ModelAndView editProfile()
+	{
+		ModelAndView md = new ModelAndView("usredit");
+		return md;
+		
 	}
 }

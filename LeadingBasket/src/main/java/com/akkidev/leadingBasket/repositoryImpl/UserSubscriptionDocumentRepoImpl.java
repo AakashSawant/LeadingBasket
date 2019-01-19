@@ -10,38 +10,39 @@ import com.akkidev.leadingBasket.entities.user_subscription_doc;
 import com.akkidev.leadingBasket.repository.UserSubscriptionDocumentRepository;
 
 @Repository
-public class UserSubscriptionDocumentRepoImpl implements UserSubscriptionDocumentRepository{
+public class UserSubscriptionDocumentRepoImpl implements UserSubscriptionDocumentRepository {
 
 	@Autowired
 	UserSubscriptionDocumentDao docDao;
-	
+
 	@Override
 	public user_subscription_doc findById(int id) {
-		// TODO Auto-generated method stub
+
 		return docDao.findById(id);
 	}
 
 	@Override
 	public List<user_subscription_doc> findAll() {
-		// TODO Auto-generated method stub
+
 		return docDao.findAll();
 	}
 
 	@Override
 	public List<user_subscription_doc> findAllByUserId(int id) {
-		// TODO Auto-generated method stub
+
 		return docDao.findAllByUserId(id);
 	}
 
 	@Override
-	public void saveDocument(user_subscription_doc document) {
-		docDao.saveDocument(document);		
+	public user_subscription_doc saveDocument(int usID, String pdf_name, String photo_name) {
+
+		return docDao.saveDocument(usID, pdf_name, photo_name);
 	}
 
 	@Override
-	public void deleteById(int id) {
-	docDao.deleteById(id);
-		
+	public user_subscription_doc deleteById(int id) {
+
+		return docDao.deleteById(id);
 	}
 
 }

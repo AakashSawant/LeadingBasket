@@ -20,9 +20,8 @@
 
 <body>
 	<div class="container">
-
-		
-		<form class="well form-horizontal" action="/user/successlogin"
+	
+		<form class="well form-horizontal" action="/successlogin"
 			method="post">
 			<fieldset>
 

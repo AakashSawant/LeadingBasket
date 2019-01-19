@@ -24,6 +24,20 @@
 <link rel="stylesheet" href="assets/theme/css/style.css">
 <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css"
 	type="text/css">
+<link rel="stylesheet" href="assets2/tether/tether.min.css">
+<link rel="stylesheet"
+	href="assets/datatables/data-tables.bootstrap4.min.css">
+<link rel="stylesheet"
+	href="assets2/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet"
+	href="assets2/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="assets2/dropdown/css/style.css">
+
+<link rel="stylesheet" href="assets2/socicon/css/styles.css">
+<link rel="stylesheet" href="assets2/theme/css/style.css">
+<link rel="stylesheet" href="assets2/mobirise/css/mbr-additional.css"
+	type="text/css">
+
 
 </head>
 <body>
@@ -39,16 +53,16 @@
 					<span></span> <span></span> <span></span> <span></span>
 				</div>
 			</button>
-				<div class="menu-logo">
+			<div class="menu-logo">
 				<div class="navbar-brand">
 					<span class="navbar-logo"> <a href="/"> <img
 							src="assets/images/ic1.png" title="LendingBasket"
-							style="height: 3.8rem; width: 10.8rem; margin-left: -1em;padding-left: 10px;">
+							style="height: 3.8rem; width: 10.8rem; margin-left: -1em; padding-left: 10px;">
 					</a>
 					</span>
 				</div>
 			</div>
-			
+
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav nav-dropdown nav-right"
 					data-app-modern-menu="true">
@@ -72,218 +86,32 @@
 						class="nav-link link text-white display-4" href="/aboutUs">
 							About Us &nbsp;</a></li>
 					<li class="nav-item"><a
-						class="nav-link link text-white display-4" href="userlogin">Login</a></li>
+						class="nav-link link text-white display-4" href="/userlogin">Login</a></li>
 				</ul>
 
 			</div>
 		</nav>
 	</section>
 
-	<section class="mbr-section content5 cid-r9c0RcM19Y" id="content5-j">
-		<div class="container">
-			<div class="media-container-row">
-				<div class="title col-12 col-md-8">
-					<br>
-					<h2
-						class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
-						${title}</h2>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<section class="accordion1 cid-r9c2PwA95U" id="accordion1-m">
-
-		<div class="container">
-			<div class="media-container-row">
-				<div class="col-12 col-md-8">
-					<div class="section-head text-center space30">
-						<h2 class="mbr-section-title pb-5 mbr-fonts-style display-2">
-							Documents</h2>
-					</div>
-					<div class="clearfix"></div>
-					<div id="bootstrap-accordion_5"
-						class="panel-group accordionStyles accordion" role="tablist"
-						aria-multiselectable="true">
-						<div class="card">
-							<div class="card-header" role="tab" id="headingOne">
-								<a role="button" class="panel-title collapsed text-black"
-									data-toggle="collapse" data-core="" href="#collapse1_5"
-									aria-expanded="false" aria-controls="collapse1">
-									<h4 class="mbr-fonts-style display-5">
-										<span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
-										Salaried
-									</h4>
-								</a>
-							</div>
-							<div id="collapse1_5" class="panel-collapse noScroll collapse "
-								role="tabpanel" aria-labelledby="headingOne"
-								data-parent="#bootstrap-accordion_5">
-								<div class="panel-body p-4 mbr-fonts-style panel-text display-7">
-
-									<ul type="square">
-										<c:forEach items="${docs}" var="doc" end="18">
-											<li>${doc.name}</li>
-										</c:forEach>
-									</ul>
-
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" role="tab" id="headingTwo">
-								<a role="button" class="collapsed panel-title text-black"
-									data-toggle="collapse" data-core="" href="#collapse2_5"
-									aria-expanded="false" aria-controls="collapse2">
-									<h4 class="mbr-fonts-style display-5">
-										<span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
-										Self Employed
-									</h4>
-
-								</a>
-							</div>
-
-							<div id="collapse2_5" class="panel-collapse noScroll collapse"
-								role="tabpanel" aria-labelledby="headingTwo"
-								data-parent="#bootstrap-accordion_5">
-
-								<div class="panel-body p-4 mbr-fonts-style panel-text display-7">
-
-									<ul type="circle">
-										<c:forEach items="${docs}" var="doc">
-											<li>${doc.name}</li>
-										</c:forEach>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="cid-rdwZRdymN4 mbr-fullscreen mbr-parallax-background"
-		id="header15-c">
-
-
-		<div class="mbr-overlay"
-			style="opacity: 0.5; background-color: rgb(7, 59, 76);"></div>
-
-		<div class="container align-right">
-			<div class="row">
-				<div class="mbr-white col-lg-8 col-md-7 content-container">
-					<h1
-						class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
-						Apply ${title}</h1>
-					<p class="mbr-text pb-3 mbr-fonts-style display-5">
-						Apply ${title} using this Form.<br> Fill The Details
-						Carefully<br>We Contact you and provide this Service
-					</p>
-				</div>
-				<div class="col-lg-4 col-md-5">
-					<div class="form-container">
-						<div class="media-container-column">
-
-							<form class="mbr-form" action="/applyNewHome" method="post"
-								id="applyForm">
-
-								<div data-for="first_name">
-									<div class="form-group">
-										<input type="text" class="form-control px-3" name="first_name"
-											tabindex="1" id="first_name" data-form-field="first_name"
-											autofocus="autofocus" value="${user.first_name}"
-											readonly="readonly" placeholder="First Name">
-									</div>
-								</div>
-								<div data-for="email">
-									<div class="form-group">
-										<input type="email" class="form-control px-3" name="email"
-											autofocus="autofocus" tabindex="2" value="${user.email}"
-											readonly="readonly" data-form-field="Email"
-											placeholder="Email [Optional]" id="email">
-									</div>
-								</div>
-								<div data-for="phone">
-									<div class="form-group">
-										<input type="tel" class="form-control px-3" name="phone"
-											data-form-field="phone" placeholder="Phone*"
-											value="${user.mobile}" readonly="readonly"
-											autofocus="autofocus" tabindex="3" required="required"
-											id="phone-header15-c">
-									</div>
-								</div>
-								<div data-for="amount">
-									<div class="form-group">
-										<input type="text" class="form-control px-3" name="amount"
-											data-form-field="amount" placeholder="Amount*"
-											autofocus="autofocus" tabindex="4" required="required">
-									</div>
-								</div>
-								<div class="input-group-btn m-2">
-									<input class="btn btn-primary display-4" type="submit"
-										role="submit">
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 	<section class="section-table cid-remAClIgQm" id="table1-4">
-
-
-		<div class="container container-table">
-			<h2
-				class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">
-				BANKS</h2>
-			<h3 class="mbr-section-subtitle mbr-fonts-style align-center pb-5 mbr-light display-5">
-				We Provide ${title} By Following Banks
-				</h3>
-			<div class="table-wrapper">
-				<div class="container">
-					<div class="row search">
-						<div class="col-md-6"></div>
-						<div class="col-md-6">
-							<div class="dataTables_filter">
-								<label class="searchInfo mbr-fonts-style display-7">Search:</label>
-								<input class="form-control input-sm">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="container scroll">
-					<table class="table isSearch" cellspacing="0">
-						<thead>
-							<tr class="table-heads ">
-								<th class="head-item mbr-fonts-style display-7">Bank Name</th>
-								<th class="head-item mbr-fonts-style display-7">File Charge</th>
-								<th class="head-item mbr-fonts-style display-7">Loan
-									Category</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="banks" items="${banks}">
-								<tr>
-									<td class="body-item mbr-fonts-style display-7">
-										${banks.bm.name}</td>
-									<td class="body-item mbr-fonts-style display-7">
-										${banks.file_charge}</td>
-									<td class="body-item mbr-fonts-style display-7">
-										${banks.ls.loan_sub_cat_name}</td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-				</div>
-
-			</div>
+	<script
+		src="https://emicalculator.net/widget/2.0/js/emicalc-loader.min.js"
+		type="text/javascript"></script>
+	<div class="container">
+	<div id="ecww-widgetwrapper" style="min-width: 250px; width: 100%;">
+		<div id="ecww-widget"
+			style="position: relative; padding-top: 0; padding-bottom: 280px; height: 0; overflow: hidden;"></div>
+		<div id="ecww-more"
+			style="background: #333; font: normal 13px/1 Helvetica, Arial, Verdana, Sans-serif; padding: 10px 0; color: #FFF; text-align: center; width: 100%; clear: both; margin: 0; clear: both; float: left;">
+			<a
+				style="background: #333; color: #FFF; text-decoration: none; border-bottom: 1px dotted #ccc;"
+				href="https://emicalculator.net/" title="Loan EMI Calculator"
+				rel="nofollow" target="_blank"></a>
 		</div>
-	</section>
-
-	
-	<section class="footer4 cid-r9c3xhuDfg" id="footer4-p">
+	</div>
+	</div>
+</section>
+<section class="footer4 cid-r9c3xhuDfg" id="footer4-p">
 
 		<div class="container">
 			<div class="media-container-row content mbr-white">
@@ -291,7 +119,7 @@
 					<div class="col-sm-1 img-logo">
 						<a href="/"> <img src="assets/images/ic1.png"
 							alt="Lending Basket"
-							style="height: 6.0rem; width: 12.8rem;margin-left: -1em; padding-bottom: 1em;">
+							style="height: 6.0rem; width: 12.8rem; margin-left: -1em; padding-bottom: 1em;">
 						</a>
 					</div>
 
@@ -384,7 +212,6 @@
 		</div>
 	</section>
 
-
 	<script src="assets/web/assets/jquery/jquery.min.js"></script>
 	<script src="assets2/web/assets/jquery/jquery.min.js"></script>
 	<script src="assets/popper/popper.min.js"></script>
@@ -406,13 +233,9 @@
 	<script src="assets/datatables/data-tables.bootstrap4.min.js"></script>
 	<script src="assets/datatables/jquery.data-tables.min.js"></script>
 
-
-
 	<div id="scrollToTop" class="scrollToTop mbr-arrow-up">
 		<a style="text-align: center;"><i></i></a>
 	</div>
 	<input name="animation" type="hidden">
-
 </body>
-
 </html>

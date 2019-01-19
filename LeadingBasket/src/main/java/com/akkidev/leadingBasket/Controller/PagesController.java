@@ -1,9 +1,15 @@
 package com.akkidev.leadingBasket.Controller;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -50,9 +56,6 @@ public class PagesController {
 	@Autowired
 	DocumentService docService;
 
-	@Autowired
-	UserSubscriptionService userSubService;
-
 	@RequestMapping("/")
 	public ModelAndView pagesHandler() {
 		ModelAndView md = new ModelAndView("index");
@@ -74,22 +77,20 @@ public class PagesController {
 	}
 
 	@RequestMapping("/Loan Service")
-	public ModelAndView loanServices() {
+	public ModelAndView loanServices(HttpServletRequest request) throws Exception {
+		
 		ModelAndView lmd = new ModelAndView("loanService");
+		String url = request.getRequestURI().replaceAll("%20", " ");
+		URLDecoder.decode(url,"UTF-8");
 		lmd.addObject("title", "LOAN");
 		lmd.addObject("subs", subService.getSubCount());
 		lmd.addObject("services", prService.getServices());
+		byte[] encode64 =Base64.encodeBase64(new category_master().getProductImage());
 		lmd.addObject("lcat1", catService.getCategories(1));
+		lmd.addObject(url);
 		return lmd;
 	}
 
-	@RequestMapping(value = "/applyNewHome", method = RequestMethod.POST)
-	public ModelAndView applyNewHomeLoanServie(@RequestParam("amount") long amt) {
-		ModelAndView md = new ModelAndView();
-		md.addObject(userSubService.addUserSubscription(amt));
-		md.setViewName("successform");
-		return md;
-	}
 
 	@RequestMapping("/Financial Service")
 	public ModelAndView financialServices() {

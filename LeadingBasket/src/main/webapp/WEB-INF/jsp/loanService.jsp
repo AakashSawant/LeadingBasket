@@ -71,7 +71,7 @@
 						class="nav-link link text-white display-4" href="/aboutUs">
 							About Us &nbsp;</a></li>
 					<li class="nav-item"><a
-						class="nav-link link text-white display-4" href="/user/userlogin">Login</a></li>
+						class="nav-link link text-white display-4" href="/userlogin">Login</a></li>
 				</ul>
 
 			</div>
@@ -112,7 +112,7 @@
 					<div class="card p-3 col-12 col-md-6 col-lg-3">
 						<div class="card-img pb-3">
 							<a href="${cat.loan_sub_cat_name}"> <img
-								src="assets/images/logo2.png" class="img-rounded"
+								src="icons/home.png" class="img-rounded"
 								alt="Cinque Terre"></a>
 						</div>
 						<div class="card-box">

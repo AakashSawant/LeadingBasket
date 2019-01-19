@@ -20,7 +20,7 @@ public class UserSubscriptionDocActivityImpl implements UserSubscriptionDocument
 	
 	@Override
 	public user_subscription_doc findById(int id) {
-		// TODO Auto-generated method stub
+		
 		return docRepository.findById(id);
 	}
 
@@ -37,15 +37,16 @@ public class UserSubscriptionDocActivityImpl implements UserSubscriptionDocument
 	}
 
 	@Override
-	public void saveDocument(user_subscription_doc document) {
-		docRepository.saveDocument(document);
-		
+	public user_subscription_doc saveDocument(int usID, String pdf_name, String photo_name) {
+		// TODO Auto-generated method stub
+		return docRepository.saveDocument(usID, pdf_name, photo_name);
 	}
 
 	@Override
-	public void deleteById(int id) {
-		docRepository.deleteById(id);
-		
+	public user_subscription_doc deleteById(int id) {
+		// TODO Auto-generated method stub
+		return docRepository.deleteById(id);
 	}
 
+	
 }

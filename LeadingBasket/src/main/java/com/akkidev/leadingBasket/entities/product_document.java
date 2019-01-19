@@ -1,6 +1,7 @@
 package com.akkidev.leadingBasket.entities;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +15,6 @@ public class product_document {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int id;
-	
 	
 	@ManyToOne(targetEntity=category_master.class,cascade=CascadeType.ALL)
 	@JoinColumn(name="category_id")
@@ -35,7 +35,7 @@ public class product_document {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
 	public category_master getC_master() {
 		return c_master;
 	}

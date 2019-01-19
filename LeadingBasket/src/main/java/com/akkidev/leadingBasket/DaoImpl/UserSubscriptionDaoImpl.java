@@ -39,8 +39,7 @@ public class UserSubscriptionDaoImpl implements UserSubscriptionDao {
 	public user_subscription findSubscriptionById(int id) {
 		return em.find(user_subscription.class, id);		
 	}
-	
-	@Transactional
+
 	@Override
 	public user_subscription addUserSubscription(long amt) {
 		user_subscription usb = new user_subscription();

@@ -1,34 +1,42 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"  media="screen">
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/web/assets/jquery/jquery.min.js"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Lending Basket</title>
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet">
+<link rel="icon" href="../assets/images/logo2.png" type="image/gif"
+	sizes="16x16">
+<link type="text/css" rel="stylesheet" href="../assets/bootstrap/css/errorstyle.css" />
+
+
+<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="error-template">
-                <h1>
-                    Oops!</h1>
-                <h2>
-                    404 Not Found</h2>
-                <div class="error-details">
-                    Sorry, an error has occured, Requested page not found!
-                </div>
-                <div class="error-actions">
-                    <a href="" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
-                        Take Me Home </a><a href="" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-envelope"></span> Contact Support </a>
-                </div>
-            </div>
-        </div>
-    </div>
+<div id="notfound">
+<div class="notfound">
+<div class="notfound-404">
+<h1>${eccode}</h1>
+<h2>${ecdes}</h2>
+</div>
+<a href="/">Homepage</a>
+</div>
 </div>
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
 </body>
 </html>

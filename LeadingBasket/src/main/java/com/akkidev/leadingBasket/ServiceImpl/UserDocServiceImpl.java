@@ -13,38 +13,39 @@ import com.akkidev.leadingBasket.entities.user_subscription_doc;
 
 @Service
 @Transactional
-public class UserDocServiceImpl implements UserSubscriptionDocService{
+public class UserDocServiceImpl implements UserSubscriptionDocService {
 
 	@Autowired
 	UserSubscriptionDocumentActivity docActivity;
+
 	@Override
 	public user_subscription_doc findById(int id) {
-		
+
 		return docActivity.findById(id);
 	}
 
 	@Override
 	public List<user_subscription_doc> findAll() {
-		// TODO Auto-generated method stub
+
 		return docActivity.findAll();
 	}
 
 	@Override
 	public List<user_subscription_doc> findAllByUserId(int id) {
-		// TODO Auto-generated method stub
+
 		return docActivity.findAllByUserId(id);
 	}
 
 	@Override
-	public void saveDocument(user_subscription_doc document) {
-		docActivity.saveDocument(document);
-		
+	public user_subscription_doc saveDocument(int usID, String pdf_name, String photo_name) {
+
+		return docActivity.saveDocument(usID, pdf_name, photo_name);
 	}
 
 	@Override
-	public void deleteById(int id) {
-		docActivity.deleteById(id);
-		
+	public user_subscription_doc deleteById(int id) {
+
+		return docActivity.deleteById(id);
 	}
 
 }
