@@ -12,12 +12,12 @@ public interface UserService {
 	public user_master addUser(String fname,String lname,Long mobile,String email,Date dob,String address,int city_id,int state_id,String gender,String password);
 
 	public List<user_master> getUser();
-	
+	public boolean checkloginuser(String email,String pass);
 	public user_master findUserByEmailAndPassword(String em,String pass);
 
 	public user_master findById(int id);
 
-	public user_master update(user_master user);
+	public user_master updateUser(int id,String fname,String lname,Long mobile,String email,String address,int city_id,int state_id,String password);
 
 	public void delete(int id);
 

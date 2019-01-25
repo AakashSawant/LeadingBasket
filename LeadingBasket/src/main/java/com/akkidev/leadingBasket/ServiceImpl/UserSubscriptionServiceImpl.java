@@ -20,9 +20,9 @@ public class UserSubscriptionServiceImpl implements UserSubscriptionService {
 	UserSubscriptionActivity userSubAct;
 	
 	@Override
-	public user_subscription addUserSubscription(long amt) {
+	public user_subscription addUserSubscription(long amt,int id,int cid,int lsid,int bid) {
 		// TODO Auto-generated method stub
-		return userSubAct.addUserSubscription(amt);
+		return userSubAct.addUserSubscription(amt, id, cid, lsid, bid);
 	}
 
 	@Override
@@ -35,6 +35,11 @@ public class UserSubscriptionServiceImpl implements UserSubscriptionService {
 	public user_subscription findSubscriptionById(int id) {
 		return userSubAct.findSubscriptionById(id);
 		
+	}
+
+	@Override
+	public List<user_subscription> getAllSubByUserId(int id) {
+		return userSubAct.getAllSubByUserId(id);
 	}
 
 	

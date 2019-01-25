@@ -9,4 +9,5 @@ public interface SubscribeService {
 	public int addSubscriber(String sb);
 	public List<subcribe> getListSub();
 	public long getSubCount();
+	public subcribe findSubByEmail(String email);
 }

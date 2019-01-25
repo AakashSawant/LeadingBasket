@@ -33,4 +33,10 @@ public class SubscribeRepositoryImpl implements SubscribeRepository {
 		
 	}
 
+	@Override
+	public subcribe findSubByEmail(String email) {
+		// TODO Auto-generated method stub
+		return subDao.findSubByEmail(email);
+	}
+
 }

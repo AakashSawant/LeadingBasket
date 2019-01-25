@@ -60,6 +60,7 @@ public class MortgageLoanController {
 		lmd.addObject("banks",bankService.getAllBankWithCharge(5));
 		return lmd;	
 	}
+	
 	@RequestMapping("/Mortgage Loan Top Up")
 	public ModelAndView ApplyMortgageLoanTopUp()  {
 		ModelAndView lmd = new ModelAndView("applyServices");

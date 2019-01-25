@@ -35,11 +35,7 @@ public class UserServiceImpl implements UserService {
 		return userActivity.findById(id);
 	}
 
-	@Override
-	public user_master update(user_master user) {
-		// TODO Auto-generated method stub
-		return userActivity.update(user);
-	}
+	
 
 	@Override
 	public void delete(int id) {
@@ -61,7 +57,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public city_master getCityById(int id) {
-		// TODO Auto-generated method stub
+	
 		return userActivity.getCityById(id);
 	}
 
@@ -73,7 +69,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public long getUserCount() {
-		// TODO Auto-generated method stub
+		
 		return userActivity.getUserCount();
 	}
 
@@ -90,6 +86,18 @@ public class UserServiceImpl implements UserService {
 		return userActivity.findUserByEmailAndPassword(em, pass);
 		
 	}
+
+	@Override
+	public user_master updateUser(int id,String fname, String lname, Long mobile, String email, String address, int city_id,
+			int state_id, String password) {
 	
+		return userActivity.updateUser(id,fname, lname, mobile, email, address, city_id, state_id, password);
+	}
+
+	@Override
+	public boolean checkloginuser(String email, String pass) {
+		
+		return userActivity.checkloginuser(email, pass);
+	}
 	
 }

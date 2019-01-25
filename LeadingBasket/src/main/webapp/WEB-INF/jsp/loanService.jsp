@@ -88,7 +88,7 @@
 				<div class="title col-12 col-md-8">
 					<h2
 						class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
-						NEED A ${title} ?</h2>
+						NEED A <br> ${title} ?</h2>
 					<h3
 						class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">
 						YOU ARE NOT ALONE!</h3>

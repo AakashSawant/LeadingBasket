@@ -7,7 +7,7 @@ import com.akkidev.leadingBasket.entities.subcribe;
 public interface SubcribeActivity {
 
 	public int addSubscriber(String sb);
-
 	public List<subcribe> getListSub();
 	public long getSubCount();
+	public subcribe findSubByEmail(String email);
 }

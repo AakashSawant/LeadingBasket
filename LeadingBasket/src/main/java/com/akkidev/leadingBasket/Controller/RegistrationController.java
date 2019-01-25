@@ -25,10 +25,12 @@ import org.springframework.web.servlet.ModelAndView;
 import com.akkidev.leadingBasket.Service.BankService;
 import com.akkidev.leadingBasket.Service.SubscribeService;
 import com.akkidev.leadingBasket.Service.UserService;
+import com.akkidev.leadingBasket.Service.UserSubscriptionService;
 import com.akkidev.leadingBasket.ServiceImpl.ProductServiceImpl;
 import com.akkidev.leadingBasket.entities.city_master;
 import com.akkidev.leadingBasket.entities.state_master;
 import com.akkidev.leadingBasket.entities.user_master;
+import com.akkidev.leadingBasket.entities.user_subscription;
 
 @Controller
 public class RegistrationController {
@@ -41,6 +43,9 @@ public class RegistrationController {
 
 	@Autowired
 	SubscribeService subService;
+
+	@Autowired
+	UserSubscriptionService user_subscriptionService;
 
 	@Autowired
 	BankService bankService;
@@ -99,12 +104,41 @@ public class RegistrationController {
 		mdl.setViewName("indexlogin");
 		return mdl;
 	}
-	
+
 	@RequestMapping("/editprof")
-	public ModelAndView editProfile()
-	{
+	public ModelAndView editProfile() {
 		ModelAndView md = new ModelAndView("usredit");
+		md.addObject("services", prService.getServices());
+		md.addObject("userdt", userService.findById(5));
+		md.addObject("city", userService.getCities());
+		md.addObject("state", userService.getState());
+
 		return md;
+	}
+
+	@RequestMapping("/updateUser")
+	public ModelAndView updateUser(@RequestParam("firstname") String fname, @RequestParam("lastname") String lname,
+			@RequestParam("phone") Long mobile, @RequestParam("email") String email,
+			@RequestParam("address") String address, @RequestParam("city") int city_id,
+			@RequestParam("state") int state_id, @RequestParam("password") String password) {
+
+		ModelAndView md = new ModelAndView("successform");
+		md.addObject(userService.updateUser(5, fname, lname, mobile, email, address, city_id, state_id, password));
+		return md;
+	}
+
+	@RequestMapping("/recentActivity")
+	public ModelAndView viewActivities() {
+		ModelAndView md = new ModelAndView("userSubDetails");
+		md.addObject("services", prService.getServices());
+		md.addObject("subdetails", user_subscriptionService.getAllSubByUserId(4));
+		md.addObject("usname",userService.findById(2));
+		return md;
+	}
+
+	@RequestMapping("/logout")
+	public String logout() {
 		
+		 return "redirect:/";
 	}
 }

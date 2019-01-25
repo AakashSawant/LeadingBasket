@@ -1,0 +1,24 @@
+adds new filed in janatri calclator
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+
+	private double rate;
+
+	@ManyToOne(targetEntity = area_master.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "area_id")
+	private area_master am;
+
+	private int tpscheme;
+	
+	private String blockNo;
+
+	private String valuezone;
+
+	@ManyToOne(targetEntity = property_master.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "property_id")
+	private property_master pm;
+	
+	<-- getter and setters-->
+	

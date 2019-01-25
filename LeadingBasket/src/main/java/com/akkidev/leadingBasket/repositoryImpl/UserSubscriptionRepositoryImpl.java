@@ -17,9 +17,9 @@ public class UserSubscriptionRepositoryImpl implements UserSubscriptionRepositor
 	UserSubscriptionDao userSubDao;
 	
 	@Override
-	public user_subscription addUserSubscription(long amt) {
+	public user_subscription addUserSubscription(long amt,int id,int cid,int lsid,int bid) {
 		// TODO Auto-generated method stub
-		return userSubDao.addUserSubscription(amt);
+		return userSubDao.addUserSubscription(amt, id, cid, lsid, bid);
 	}
 
 	@Override
@@ -32,6 +32,12 @@ public class UserSubscriptionRepositoryImpl implements UserSubscriptionRepositor
 	public user_subscription findSubscriptionById(int id) {
 		return userSubDao.findSubscriptionById(id);
 		
+	}
+
+	@Override
+	public List<user_subscription> getAllSubByUserId(int id) {
+		// TODO Auto-generated method stub
+		return userSubDao.getAllSubByUserId(id);
 	}
 
 	

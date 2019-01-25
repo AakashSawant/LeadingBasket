@@ -22,6 +22,7 @@ import com.akkidev.leadingBasket.entities.city_master;
 import com.akkidev.leadingBasket.entities.state_master;
 import com.akkidev.leadingBasket.entities.user_master;
 
+@Transactional
 @Service
 public class UserDaoImpl implements UserDao {
 
@@ -70,12 +71,7 @@ public class UserDaoImpl implements UserDao {
 		return em.find(user_master.class, id);
 	}
 
-	@Transactional
-	@Override
-	public user_master update(user_master user) {
-		return em.merge(user);
-	}
-
+	
 	@Transactional
 	@Override
 	public void delete(int id) {
@@ -84,6 +80,7 @@ public class UserDaoImpl implements UserDao {
 		em.remove(user);
 	}
 
+	
 	@Override
 	public state_master getStateById(int id) {
 		return em.find(state_master.class, id);
@@ -139,4 +136,36 @@ public class UserDaoImpl implements UserDao {
 		return em.createQuery(query).getSingleResult();
 	}
 
+	@Override	
+	public user_master updateUser(int id,String fname, String lname, Long mobile, String email, String address, int city_id,
+			int state_id, String password) {
+		
+		user_master updateUser = findById(id);
+		city_master ct = em.find(city_master.class, city_id);
+		state_master st = em.find(state_master.class, state_id);
+		updateUser.getId();
+		updateUser.setFirst_name(fname);
+		updateUser.setLast_name(lname);
+		updateUser.setMobile(mobile);	
+		updateUser.setEmail(email);
+		updateUser.setAdderss(address);
+		city_id = ct.getId();
+		updateUser.setCt(ct);
+		state_id = st.getId();
+		updateUser.setSt(st);
+		updateUser.setPassword(password);
+		updateUser.setUpdate_on(new GregorianCalendar().getTime());
+		updateUser.setUpdate_by(fname);
+		em.merge(updateUser);
+		return updateUser;
+		
+	}
+	@Override	
+	public boolean checkloginuser(String email,String pass)
+	{
+		boolean rs = true;
+		
+		return rs;
+	}
+	
 }

@@ -22,7 +22,7 @@ public class SubscribeActivityImpl implements SubcribeActivity {
 	@Override
 	public int addSubscriber(String sb) {
 
-return subRepo.addSubscriber(sb);
+			return subRepo.addSubscriber(sb);
 	}
 
 	@Override
@@ -35,6 +35,12 @@ return subRepo.addSubscriber(sb);
 	public long getSubCount() {
 		return subRepo.getSubCount();
 		
+	}
+
+	@Override
+	public subcribe findSubByEmail(String email) {
+		// TODO Auto-generated method stub
+		return subRepo.findSubByEmail(email);
 	}
 
 }

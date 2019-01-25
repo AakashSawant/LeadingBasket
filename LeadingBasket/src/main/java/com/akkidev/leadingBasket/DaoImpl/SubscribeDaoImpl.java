@@ -56,4 +56,9 @@ public class SubscribeDaoImpl implements SubscribeDao {
 	return em.createQuery(query).getSingleResult();
 	}
 
+	@Override
+	public subcribe findSubByEmail(String email) {
+		return em.find(subcribe.class, email);
+	}
+
 }

@@ -41,11 +41,7 @@ public class UserActivityImpl implements UserActivity {
 		return userRepo.findById(id);
 	}
 
-	@Override
-	public user_master update(user_master user) {
-		
-		return userRepo.update(user);
-	}
+	
 
 	@Override
 	public void delete(int id) {
@@ -87,6 +83,19 @@ public class UserActivityImpl implements UserActivity {
 	public user_master findUserByEmailAndPassword(String em, String pass) {
 		// TODO Auto-generated method stub
 		return userRepo.findUserByEmailAndPassword(em, pass);
+	}
+
+	@Override
+	public user_master updateUser(int id,String fname, String lname, Long mobile, String email, String address, int city_id,
+			int state_id, String password) {
+		// TODO Auto-generated method stub
+		return userRepo.updateUser(id,fname, lname, mobile, email, address, city_id, state_id, password);
+	}
+
+	@Override
+	public boolean checkloginuser(String email, String pass) {
+		// TODO Auto-generated method stub
+		return userRepo.checkloginuser(email, pass);
 	}
 
 }

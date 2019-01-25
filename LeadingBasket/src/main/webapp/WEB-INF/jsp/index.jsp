@@ -552,6 +552,9 @@
 						<form class="form-inline" action="/subscribe" method="post">
 
 							<div class="form-group">
+								<c:if test="${not empty msg}">
+   											Error: ${msg}
+								</c:if>
 								<input type="email"
 									class="form-control input-sm input-inverse my-2" name="emid"
 									required="required" data-form-field="emid" placeholder="Email"

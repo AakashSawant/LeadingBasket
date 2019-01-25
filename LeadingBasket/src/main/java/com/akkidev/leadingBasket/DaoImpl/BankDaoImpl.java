@@ -36,7 +36,11 @@ public class BankDaoImpl implements BankDao {
 
 	@Override
 	public List<bank_master> getAllBanks() {
-		return null;
+		CriteriaBuilder builder = em.getCriteriaBuilder();
+		CriteriaQuery<bank_master> query = builder.createQuery(bank_master.class);
+		Root<bank_master> root = query.from(bank_master.class);
+		query.select(root);
+		return em.createQuery(query).getResultList();
 	}
 
 	@Override

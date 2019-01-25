@@ -30,6 +30,7 @@ import com.akkidev.leadingBasket.Service.UserService;
 import com.akkidev.leadingBasket.Service.UserSubscriptionService;
 import com.akkidev.leadingBasket.ServiceImpl.ProductServiceImpl;
 import com.akkidev.leadingBasket.entities.category_master;
+import com.akkidev.leadingBasket.entities.subcribe;
 import com.akkidev.leadingBasket.entities.user_master;
 
 @Controller
@@ -69,28 +70,38 @@ public class PagesController {
 	@RequestMapping(value = "/subscribe")
 	public ModelAndView getSubScriber(@RequestParam("emid") String sb) {
 		System.out.println(sb);
-		ModelAndView mad = new ModelAndView("successform");
+		ModelAndView mad = new ModelAndView();
+		/*List<subcribe> ex = subService.getListSub();
+		if(ex.get(2).equals(subService.findSubByEmail(sb)))
+		{
+			mad.addObject("msg","Aready Ecists");
+			mad.setViewName("");
+			 
+		}
+		else
+		{*/
 		mad.addObject("sub", subService.addSubscriber(sb));
 		mad.addObject("msg", "Thanks Subscribe Our Service " + sb);
+		mad.setViewName("successform");
+	//	}
 		return mad;
 
 	}
 
 	@RequestMapping("/Loan Service")
 	public ModelAndView loanServices(HttpServletRequest request) throws Exception {
-		
+
 		ModelAndView lmd = new ModelAndView("loanService");
 		String url = request.getRequestURI().replaceAll("%20", " ");
-		URLDecoder.decode(url,"UTF-8");
+		URLDecoder.decode(url, "UTF-8");
 		lmd.addObject("title", "LOAN");
 		lmd.addObject("subs", subService.getSubCount());
 		lmd.addObject("services", prService.getServices());
-		byte[] encode64 =Base64.encodeBase64(new category_master().getProductImage());
+		byte[] encode64 = Base64.encodeBase64(new category_master().getProductImage());
 		lmd.addObject("lcat1", catService.getCategories(1));
 		lmd.addObject(url);
 		return lmd;
 	}
-
 
 	@RequestMapping("/Financial Service")
 	public ModelAndView financialServices() {

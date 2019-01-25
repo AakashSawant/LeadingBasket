@@ -62,7 +62,7 @@ public class HomeLoanController {
 		lmd.addObject("docs", docService.getDocuments());
 		lmd.addObject("subs", subService.getSubCount());
 		lmd.addObject("services", prService.getServices());
-		lmd.addObject("user", userService.findById(5));
+		lmd.addObject("user", userService.findById(4));
 		lmd.addObject("banks", bankService.getAllBankWithCharge(1));
 		return lmd;
 	}
@@ -103,11 +103,11 @@ public class HomeLoanController {
 	}
 
 	@RequestMapping(value = "/applyNewHome", method = RequestMethod.POST)
-	public ModelAndView applyNewHomeLoanServie(@RequestParam("amount") long amt) {
+	public ModelAndView applyNewHomeLoanServie(@RequestParam("amount") long amt,@RequestParam("bank") int bank) {
 		ModelAndView md = new ModelAndView();
 		md.addObject("services", prService.getServices());
-		md.addObject(userSubService.addUserSubscription(amt));
-		md.addObject("userdt", userSubService.findSubscriptionById(0));
+		md.addObject(userSubService.addUserSubscription(amt, 4, 1, 2, bank));//amount,userid,cat_id,lonsubid,bankid
+		md.addObject("userdt", userSubService.findSubscriptionById(61));
 		md.setViewName("UploadDocuments");
 		return md;
 	}

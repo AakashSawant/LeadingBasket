@@ -37,4 +37,10 @@ public class SubscribeServiceImpl implements SubscribeService {
 		
 	}
 
+	@Override
+	public subcribe findSubByEmail(String email) {
+		// TODO Auto-generated method stub
+		return subServiceImpl.findSubByEmail(email);
+	}
+
 }

@@ -36,11 +36,7 @@ public class UserRepositoryImpl implements UserRepository {
 		return userDao.findById(id);
 	}
 
-	@Override
-	public user_master update(user_master user) {
-		// TODO Auto-generated method stub
-		return userDao.update(user);
-	}
+	
 
 	@Override
 	public void delete(int id) {
@@ -82,6 +78,19 @@ public class UserRepositoryImpl implements UserRepository {
 	public user_master findUserByEmailAndPassword(String em, String pass) {
 		// TODO Auto-generated method stub
 		return userDao.findUserByEmailAndPassword(em, pass);
+	}
+
+	@Override
+	public user_master updateUser(int id,String fname, String lname, Long mobile, String email, String address, int city_id,
+			int state_id, String password) {
+		return userDao.updateUser(id,fname, lname, mobile, email, address, city_id, state_id, password);
+		
+	}
+
+	@Override
+	public boolean checkloginuser(String email, String pass) {
+		
+		return userDao.checkloginuser(email, pass);
 	}
 
 	

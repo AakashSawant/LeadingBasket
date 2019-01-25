@@ -24,8 +24,28 @@
 <link rel="stylesheet" href="assets/theme/css/style.css">
 <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css"
 	type="text/css">
+<link rel="stylesheet" href="assets2/tether/tether.min.css">
+<link rel="stylesheet"
+	href="assets/datatables/data-tables.bootstrap4.min.css">
+<link rel="stylesheet"
+	href="assets2/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet"
+	href="assets2/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="assets2/dropdown/css/style.css">
 
+<link rel="stylesheet" href="assets2/socicon/css/styles.css">
+<link rel="stylesheet" href="assets2/theme/css/style.css">
+<link rel="stylesheet" href="assets2/mobirise/css/mbr-additional.css"
+	type="text/css">
+
+<style type="text/css">
+select {
+	width: 400px;
+	text-align-last: center;
+}
+</style>
 </head>
+
 <body>
 	<!-- <div class="loader"></div>-->
 	<section class="menu cid-r9bRLUSb5x" once="menu" id="menu2-9">
@@ -39,16 +59,16 @@
 					<span></span> <span></span> <span></span> <span></span>
 				</div>
 			</button>
-				<div class="menu-logo">
+			<div class="menu-logo">
 				<div class="navbar-brand">
 					<span class="navbar-logo"> <a href="/"> <img
 							src="assets/images/ic1.png" title="LendingBasket"
-							style="height: 3.8rem; width: 10.8rem; margin-left: -1em;padding-left: 10px;">
+							style="height: 3.8rem; width: 10.8rem; margin-left: -1em; padding-left: 10px;">
 					</a>
 					</span>
 				</div>
 			</div>
-			
+
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav nav-dropdown nav-right"
 					data-app-modern-menu="true">
@@ -72,220 +92,139 @@
 						class="nav-link link text-white display-4" href="/aboutUs">
 							About Us &nbsp;</a></li>
 					<li class="nav-item"><a
-						class="nav-link link text-white display-4" href="userlogin">Login</a></li>
+						class="nav-link link text-white display-4" href="/userlogin">Login</a></li>
 				</ul>
 
 			</div>
 		</nav>
 	</section>
 
-	<section class="mbr-section content5 cid-r9c0RcM19Y" id="content5-j">
-		<div class="container">
-			<div class="media-container-row">
-				<div class="title col-12 col-md-8">
-					<br>
-					<h2
-						class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
-						${title}</h2>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<section class="accordion1 cid-r9c2PwA95U" id="accordion1-m">
-
-		<div class="container">
-			<div class="media-container-row">
-				<div class="col-12 col-md-8">
-					<div class="section-head text-center space30">
-						<h2 class="mbr-section-title pb-5 mbr-fonts-style display-2">
-							Documents</h2>
-					</div>
-					<div class="clearfix"></div>
-					<div id="bootstrap-accordion_5"
-						class="panel-group accordionStyles accordion" role="tablist"
-						aria-multiselectable="true">
-						<div class="card">
-							<div class="card-header" role="tab" id="headingOne">
-								<a role="button" class="panel-title collapsed text-black"
-									data-toggle="collapse" data-core="" href="#collapse1_5"
-									aria-expanded="false" aria-controls="collapse1">
-									<h4 class="mbr-fonts-style display-5">
-										<span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
-										Salaried
-									</h4>
-								</a>
-							</div>
-							<div id="collapse1_5" class="panel-collapse noScroll collapse "
-								role="tabpanel" aria-labelledby="headingOne"
-								data-parent="#bootstrap-accordion_5">
-								<div class="panel-body p-4 mbr-fonts-style panel-text display-7">
-
-									<ul type="square">
-										<c:forEach items="${docs}" var="doc" end="18">
-											<li>${doc.name}</li>
-										</c:forEach>
-									</ul>
-
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" role="tab" id="headingTwo">
-								<a role="button" class="collapsed panel-title text-black"
-									data-toggle="collapse" data-core="" href="#collapse2_5"
-									aria-expanded="false" aria-controls="collapse2">
-									<h4 class="mbr-fonts-style display-5">
-										<span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
-										Self Employed
-									</h4>
-
-								</a>
-							</div>
-
-							<div id="collapse2_5" class="panel-collapse noScroll collapse"
-								role="tabpanel" aria-labelledby="headingTwo"
-								data-parent="#bootstrap-accordion_5">
-
-								<div class="panel-body p-4 mbr-fonts-style panel-text display-7">
-
-									<ul type="circle">
-										<c:forEach items="${docs}" var="doc">
-											<li>${doc.name}</li>
-										</c:forEach>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="cid-rdwZRdymN4 mbr-fullscreen mbr-parallax-background"
-		id="header15-c">
-
-
-		<div class="mbr-overlay"
-			style="opacity: 0.5; background-color: rgb(7, 59, 76);"></div>
-
-		<div class="container align-right">
-			<div class="row">
-				<div class="mbr-white col-lg-8 col-md-7 content-container">
-					<h1
-						class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
-						Apply ${title}</h1>
-					<p class="mbr-text pb-3 mbr-fonts-style display-5">
-						Apply ${title} using this Form.<br> Fill The Details
-						Carefully<br>We Contact you and provide this Service
-					</p>
-				</div>
-				<div class="col-lg-4 col-md-5">
-					<div class="form-container">
-						<div class="media-container-column">
-
-							<form class="mbr-form" action="/applyNewHome" method="post"
-								id="applyForm">
-
-								<div data-for="first_name">
-									<div class="form-group">
-										<input type="text" class="form-control px-3" name="first_name"
-											tabindex="1" id="first_name" data-form-field="first_name"
-											autofocus="autofocus" value="${user.first_name}"
-											readonly="readonly" placeholder="First Name">
-									</div>
-								</div>
-								<div data-for="email">
-									<div class="form-group">
-										<input type="email" class="form-control px-3" name="email"
-											autofocus="autofocus" tabindex="2" value="${user.email}"
-											readonly="readonly" data-form-field="Email"
-											placeholder="Email [Optional]" id="email">
-									</div>
-								</div>
-								<div data-for="phone">
-									<div class="form-group">
-										<input type="tel" class="form-control px-3" name="phone"
-											data-form-field="phone" placeholder="Phone*"
-											value="${user.mobile}" readonly="readonly"
-											autofocus="autofocus" tabindex="3" required="required"
-											id="phone-header15-c">
-									</div>
-								</div>
-								<div data-for="amount">
-									<div class="form-group">
-										<input type="text" class="form-control px-3" name="amount"
-											data-form-field="amount" placeholder="Amount*"
-											autofocus="autofocus" tabindex="4" required="required">
-									</div>
-									
-								</div>
-								<div data-for="bank">
-									<div class="form-group">
-										<select class="form-control px-3" name="bank"
-											data-form-field="Bank" 
-											autofocus="autofocus" tabindex="4" required="required">
-												<option>Select Bank</option>
-												<c:forEach items="${banks}"  var="bnname">
-												<option value="${bnname.bm.id}">${bnname.bm.name }</option>
-												</c:forEach>
-											</select>
-									</div>
-									
-								</div>
-								<div class="input-group-btn m-2">
-									<input class="btn btn-primary display-4" type="submit"
-										role="submit">
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 	<section class="section-table cid-remAClIgQm" id="table1-4">
 
-
-		<div class="container container-table">
-			<h2
-				class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">
-				BANKS</h2>
-			<h3 class="mbr-section-subtitle mbr-fonts-style align-center pb-5 mbr-light display-5">
-				We Provide ${title} By Following Banks
-				</h3>
-			<div class="table-wrapper">
-				<div class="container scroll">
-					<table class="table isSearch" cellspacing="0">
-						<thead>
-							<tr class="table-heads ">
-								<th class="head-item mbr-fonts-style display-7">Bank Name</th>
-								<th class="head-item mbr-fonts-style display-7">File Charge</th>
-								<th class="head-item mbr-fonts-style display-7">Loan
-									Category</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="banks" items="${banks}">
-								<tr>
-									<td class="body-item mbr-fonts-style display-7">
-										${banks.bm.name}</td>
-									<td class="body-item mbr-fonts-style display-7">
-										${banks.file_charge}</td>
-									<td class="body-item mbr-fonts-style display-7">
-										${banks.ls.loan_sub_cat_name}</td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="title col-12 col-lg-8">
+					<h2
+						class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">
+						Welcome to Janatri Calculator</h2>
+					<h3
+						class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">
+						Here You Can Easily Know rate your property</h3>
 				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="media-container-column col-lg-9"
+					data-form-type="formoid">
+					<form class="mbr-form" name="janatri" data-form-title="" action=""
+						onsubmit="showAns()">
+						<div class="row row-sm-offset">
+							<div class="col-md-12 multi-horizontal" data-for="state">
+								<div class="form-group">
+									<label class="form-control-label mbr-fonts-style display-7"
+										for="name-form1-2">Select State</label> <select
+										class="form-control" name="state" 
+										data-form-field="state" id="name-form1-2" required="required">
+										<option>States*</option>
+										<c:forEach items="${janstate}" var="jan">
+											<option value="${jan.id}"> ${jan.state_name}</option>
+										</c:forEach>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-6 multi-horizontal" data-for="city">
+								<div class="form-group">
+									<label class="form-control-label mbr-fonts-style display-7"
+										for="name-form1-2">City *</label> <select class="form-control"
+										name="city" data-form-field="city" id="name-form1-2"
+										required="required">
+										<option>Select City</option>
+										<c:forEach items="${jancity}" var="janct">
+											<option value="${janct.id}">${janct.city_name}</option>
+										</c:forEach>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-6 multi-horizontal" data-for="area">
+								<div class="form-group">
+									<label class="form-control-label mbr-fonts-style display-7"
+										for="name-form1-2">Area/Ward *</label> <select
+										class="form-control" value="" name="area" required="required"
+										data-form-field="area" id="name-form1-2">
+										<option>Select Your Area</option>
+										<c:forEach items="${janArea }" var="janA">
+											<option value="${janA.id }">${janA.area_name}</option>
+										</c:forEach>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-6 multi-horizontal" data-for="ipscheme">
+								<div class="form-group">
+									<label class="form-control-label mbr-fonts-style display-7"
+										for="name-form1-2">IP Scheme No.*</label> <input
+										class="form-control" required="required" name="ipscheme"
+										data-form-field="ipscheme" id="name-form1-2">
+								</div>
+							</div>
+							<div class="col-md-6 multi-horizontal" data-for="servayno">
+								<div class="form-group">
+									<label class="form-control-label mbr-fonts-style display-7"
+										for="name-form1-2">Block No./F.P. No./ Survey No./City
+										Survey No.(Any) *</label> <input class="form-control" name="servayno"
+										required="required" data-form-field="servayno"
+										id="name-form1-2">
+								</div>
+							</div>
+							<div class="col-md-6 multi-horizontal" data-for="typeofpr">
+								<div class="form-group">
+									<label class="form-control-label mbr-fonts-style display-7"
+										for="name-form1-2">Type Of Property</label> <select
+										class="form-control" required="required" name="typeofpr"
+										data-form-field="typeofpr" id="name-form1-2">
+										<option>Select One</option>
+										<c:forEach items="${janProperty}" var="janP">
+											<option value="${janP.id}"> ${janP.name} </option>
+										</c:forEach>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-6 multi-horizontal" data-for="valuzone">
+								<div class="form-group">
+									<label class="form-control-label mbr-fonts-style display-7"
+										for="name-form1-2">Value Zone</label> <input
+										class="form-control" required="required" name="valuzone"
+										data-form-field="valuzone" id="name-form1-2">
+								</div>
+							</div>
+							<span class="input-group-btn col-md-6 "><button
+									id="calJanatri" type="submit"
+									class="btn btn-primary btn-form display-4">Calculate
+									Rate</button></span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
+
+	</section>
+	<section class="section-table cid-remAClIgQm" id="ansDiv"
+		style="display: none;">
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="title col-12 col-lg-8">
+					<h2
+						class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">
+						Welcome to Janatri Calculator</h2>
+					<h3
+						class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">
+						Here You Can Easily Know rate your property</h3>
+				</div>
 			</div>
 		</div>
 	</section>
-
-	
 	<section class="footer4 cid-r9c3xhuDfg" id="footer4-p">
 
 		<div class="container">
@@ -294,7 +233,7 @@
 					<div class="col-sm-1 img-logo">
 						<a href="/"> <img src="assets/images/ic1.png"
 							alt="Lending Basket"
-							style="height: 6.0rem; width: 12.8rem;margin-left: -1em; padding-bottom: 1em;">
+							style="height: 6.0rem; width: 12.8rem; margin-left: -1em; padding-bottom: 1em;">
 						</a>
 					</div>
 
@@ -387,12 +326,12 @@
 		</div>
 	</section>
 
-
 	<script src="assets/web/assets/jquery/jquery.min.js"></script>
 	<script src="assets2/web/assets/jquery/jquery.min.js"></script>
 	<script src="assets/popper/popper.min.js"></script>
 	<script src="assets/tether/tether.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/bootstrap/js/unitcalc.js" type="text/javascript"></script>
 	<script src="assets2/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/smoothscroll/smooth-scroll.js"></script>
 	<script src="assets/dropdown/js/script.min.js"></script>
@@ -406,16 +345,20 @@
 	<script src="assets/theme/js/script.js"></script>
 	<script src="assets/slidervideo/script.js"></script>
 	<script src="assets/formoid/formoid.min.js"></script>
-	<script src="assets/datatables/data-tables.bootstrap4.min.js"></script>
-	<script src="assets/datatables/jquery.data-tables.min.js"></script>
-
-
+	<script type="text/javascript">
+		function showAns() {
+			var div = document.getElementById("ansDiv");
+			if (div.style.display == 'none') {
+				div.style.display = '';
+			} else {
+				div.style.display = 'none';
+			}
+		}
+	</script>
 
 	<div id="scrollToTop" class="scrollToTop mbr-arrow-up">
 		<a style="text-align: center;"><i></i></a>
 	</div>
 	<input name="animation" type="hidden">
-
 </body>
-
 </html>

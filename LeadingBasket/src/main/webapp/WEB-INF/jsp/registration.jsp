@@ -7,13 +7,22 @@
 <head>
 	<title>LeadingBasket</title>
 </head>
-<link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
-<link rel="stylesheet" href="/bootstrapvalidator/dist/css/bootstrapValidator.css">
-<link rel="stylesheet" href="/bootstrapvalidator/dist/css/bootstrapValidator.min.css">
-<script type="text/javascript"src="/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	
-
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="bootstrapvalidator/dist/css/bootstrapValidator.css">
+<link rel="stylesheet" href="bootstrapvalidator/dist/css/bootstrapValidator.min.css">
+<script type="text/javascript"src="bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+$("#state").change(function() {
+	  if ($(this).data('options') === undefined) {
+	    /*Taking an array of all options-2 and kind of embedding it on the select1*/
+	    $(this).data('options', $('#city option').clone());
+	  }
+	  var id = $(this).val();
+	  var options = $(this).data('options').filter('[value=' + id + ']');
+	  $('#city').html(options);
+	});
+</script>
 <body>
 <div class="container">
 
@@ -126,7 +135,7 @@
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="state" class="form-control selectpicker" required="required">
+    <select name="state" id="state" class="form-control selectpicker" required="required">
       <option value="">Select State</option>
    		<c:forEach var="state" items="${state}">
    			<option value="${state.id}">${state.state_name}</option>
@@ -142,7 +151,7 @@
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="city" class="form-control selectpicker" required="required">
+    <select name="city" id="city" class="form-control selectpicker" required="required">
       <option value="">Select City</option>
      		<c:forEach var="city" items="${city}">
    			<option value="${city.id}">${city.city_name}</option>

@@ -76,7 +76,7 @@
 							<a class="text-white dropdown-item display-4"
 								href="/editprof">Edit Profile</a><a
 								class="text-white dropdown-item display-4"
-								href="/resAct" aria-expanded="false">View Recent Activities</a><a
+								href="/recentActivity" aria-expanded="false">View Recent Activities</a><a
 								class="text-white dropdown-item display-4"
 								href="/logout" aria-expanded="false">Log Out</a>
 						</div></li>
