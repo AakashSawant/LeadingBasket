@@ -26,8 +26,6 @@
 	type="text/css">
 <link rel="stylesheet" href="assets2/tether/tether.min.css">
 <link rel="stylesheet"
-	href="assets/datatables/data-tables.bootstrap4.min.css">
-<link rel="stylesheet"
 	href="assets2/bootstrap/css/bootstrap-grid.min.css">
 <link rel="stylesheet"
 	href="assets2/bootstrap/css/bootstrap-reboot.min.css">
@@ -124,7 +122,7 @@
 								</td>
 								<td class="body-item mbr-fonts-style display-7">${userdt.loan_Amount}
 								</td>
-								<td class="body-item mbr-fonts-style display-7">${userdt.ls.loan_sub_cat_name}
+								<td class="body-item mbr-fonts-style display-7">${userdt.ls.name}
 								</td>
 							</tr>
 
@@ -146,44 +144,36 @@
 					<h3
 						class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">
 						Easily add Documents <br> According these Documents We
-						Provide Your ${userdt.ls.loan_sub_cat_name}
+						Provide Your ${userdt.ls.name}
 					</h3>
 				</div>
 			</div>
 		</div>
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="media-container-column col-lg-8"
-					data-form-type="formoid">
-					<div data-form-alert="" hidden="">Thanks for filling out the
-						form!</div>
+				<div class="media-container-column col-lg-12">
 
-					<form class="mbr-form" action="" method="post"
-						data-form-title="Mobirise Form">
-						<input type="hidden" name="email" data-form-email="true"
-							value="xeACxMHKYmeUvGJ7Eq2DpbqhUikK4wxwI0SJZxZkQ173DX/Dicks4yzZUSpxpQFoPB8WZjoU2qr9a8O1xgFgAjp+8wkkbHD/nyynAdbJvGBelfuqPgl8BX68harZmyC5">
-						<div class="row row-sm-offset">
-							<div class="col-md-7 multi-horizontal" data-for="name">
-								<div class="form-group">
-									<label class="form-control-label mbr-fonts-style display-7"
-										for="name-form1-2">Document Name</label> <input type="text"
-										readonly="readonly" class="form-control" name="name"
-										data-form-field="Name" id="name-form1-2">
-								</div>
-							</div>
-							<div class="col-md-4 multi-horizontal" data-for="phone">
-								<div class="form-group">
-									<label class="form-control-label mbr-fonts-style display-7"
-										for="phone-form1-2">Browse File </label> <input type="file"
-										class="form-control" name="phone" data-form-field="Phone"
-										id="phone-form1-2">
-								</div>
-							</div>
-						</div>
-						<span class="input-group-btn"><button href="" type="submit"
-								class="btn btn-primary btn-form display-4">Upload
-								Documents</button></span>
-					</form>
+					<table class="table isSearch" cellspacing="0">
+						<tr>
+							<th>Document Name<br> <br></th>
+							<th></th>
+							<th></th>
+						</tr>
+						<c:forEach items="${docs}" var="list">
+							<tr>
+								<td width="45%"><label
+									class="form-control-label mbr-fonts-style display-7"
+									for="name-form1-2">${list.name}</label></td>
+								<td>
+									<form method="post" action="/upLoadDoc" enctype="multipart/form-data">
+										<input type="hidden" name="docName" value="${list.name}">
+										<input type="file" name="uploadFile" required="required" accept="application/pdf,image/*"> 
+										<input class="btn btn-primary display-4" type="submit" role="submit">
+									</form>
+								</td>
+							</tr>
+						</c:forEach>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -308,7 +298,6 @@
 	<script src="assets/slidervideo/script.js"></script>
 	<script src="assets/formoid/formoid.min.js"></script>
 	<script src="assets/datatables/data-tables.bootstrap4.min.js"></script>
-	<script src="assets/datatables/jquery.data-tables.min.js"></script>
 
 	<div id="scrollToTop" class="scrollToTop mbr-arrow-up">
 		<a style="text-align: center;"><i></i></a>

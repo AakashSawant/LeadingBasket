@@ -1,14 +1,21 @@
 package com.akkidev.leadingBasket.Controller;
 
+import java.io.IOException;
 import java.net.URLEncoder;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.akkidev.leadingBasket.ActivityImpl.ImageToPDF;
 import com.akkidev.leadingBasket.Service.BankService;
 import com.akkidev.leadingBasket.Service.CategoryService;
 import com.akkidev.leadingBasket.Service.DocumentService;
@@ -38,12 +45,20 @@ public class HomeLoanController {
 
 	@Autowired
 	LoanCategoryService loanCatService;
+	
+	@Autowired
+	ImageToPDF pdf;
+	
+	@Autowired
+	EncryptionPDF encPDF;
 
 	@Autowired
 	DocumentService docService;
 
 	@Autowired
 	UserSubscriptionService userSubService;
+	
+	 public static String uploadDir = System.getProperty("user.dir") + "/upload/UserDoc/1";
 
 	@RequestMapping("/Home Loan")
 	public ModelAndView HomeLoanCategory() throws Exception {
@@ -107,8 +122,46 @@ public class HomeLoanController {
 		ModelAndView md = new ModelAndView();
 		md.addObject("services", prService.getServices());
 		md.addObject(userSubService.addUserSubscription(amt, 4, 1, 2, bank));//amount,userid,cat_id,lonsubid,bankid
+		md.addObject("docs", docService.getDocuments());
 		md.addObject("userdt", userSubService.findSubscriptionById(61));
 		md.setViewName("UploadDocuments");
+		return md;
+	}
+	
+	
+	@RequestMapping("/upLoadDoc")
+	public ModelAndView updloadDocs(@RequestParam("docName") String docName,
+		      @RequestParam("uploadFile") MultipartFile file)
+	{	
+		ModelAndView md = new ModelAndView("UploadDocuments");
+		 md.addObject("services", prService.getServices());
+		
+		   System.out.println(docName + "------------->" + file.toString());
+		    md.addObject("userdt", userSubService.findSubscriptionById(61));
+		    md.addObject("docs", docService.getDocuments());
+		   String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+		    System.out.println(extension);
+		    if (!extension.equals("pdf")) {
+		      Path fileNameAndPath = Paths.get(uploadDir, docName + "." + extension);
+		      try {
+		        Files.write(fileNameAndPath, file.getBytes());
+		        pdf.imgtoPDF(uploadDir, docName, extension);
+		        Files.delete(fileNameAndPath);
+		      } catch (IOException e) {
+		        // TODO Auto-generated catch block
+		        e.printStackTrace();
+		      }
+		    } else if (extension.equals("pdf")) {
+		      Path fileNameAndPath = Paths.get(uploadDir, file.getOriginalFilename());
+		      try {
+		        Files.write(fileNameAndPath, file.getBytes());
+		        encPDF.setPassword(fileNameAndPath, uploadDir, docName);
+		        Files.delete(fileNameAndPath);
+		      } catch (IOException e) {
+		        // TODO Auto-generated catch block
+		        e.printStackTrace();
+		      }
+		    }
 		return md;
 	}
 

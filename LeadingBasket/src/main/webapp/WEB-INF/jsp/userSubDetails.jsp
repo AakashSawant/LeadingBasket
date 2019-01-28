@@ -134,9 +134,9 @@
 								</td>
 								<td class="body-item mbr-fonts-style display-7">${userdt.cm.ms.name}
 								</td>
-								<td class="body-item mbr-fonts-style display-7">${userdt.cm.loan_sub_cat_name}
+								<td class="body-item mbr-fonts-style display-7">${userdt.cm.name}
 								</td>
-								<td class="body-item mbr-fonts-style display-7">${userdt.ls.loan_sub_cat_name}
+								<td class="body-item mbr-fonts-style display-7">${userdt.ls.name}
 								</td>
 								<td class="body-item mbr-fonts-style display-7">${userdt.loan_Amount}
 								</td>

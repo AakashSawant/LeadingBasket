@@ -274,7 +274,7 @@
 									<td class="body-item mbr-fonts-style display-7">
 										${banks.file_charge}</td>
 									<td class="body-item mbr-fonts-style display-7">
-										${banks.ls.loan_sub_cat_name}</td>
+										${banks.ls.name}</td>
 								</tr>
 							</c:forEach>
 						</tbody>

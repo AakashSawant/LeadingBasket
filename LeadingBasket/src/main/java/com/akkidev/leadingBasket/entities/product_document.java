@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 public class product_document {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
 	@ManyToOne(targetEntity=category_master.class,cascade=CascadeType.ALL)
@@ -28,6 +28,17 @@ public class product_document {
 	@JoinColumn(name="loan_subcategory_id")
 	private loan_subcategory ls;
 	
+	private int type;
+	
+	
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
+	}
+
 	public int getId() {
 		return id;
 	}

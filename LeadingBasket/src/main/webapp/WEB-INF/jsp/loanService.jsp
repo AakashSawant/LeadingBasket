@@ -111,13 +111,13 @@
 				<c:forEach items="${lcat1}" var="cat">
 					<div class="card p-3 col-12 col-md-6 col-lg-3">
 						<div class="card-img pb-3">
-							<a href="${cat.loan_sub_cat_name}"> <img
+							<a href="${cat.name}"> <img
 								src="icons/home.png" class="img-rounded"
 								alt="Cinque Terre"></a>
 						</div>
 						<div class="card-box">
 							<h4 class="card-title py-3 mbr-fonts-style display-5">
-								<a href="${cat.loan_sub_cat_name}" class="link text-black">${cat.loan_sub_cat_name}</a>
+								<a href="${cat.name}" class="link text-black">${cat.name}</a>
 							</h4>
 						</div>
 					</div>

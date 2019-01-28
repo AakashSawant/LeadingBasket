@@ -6,6 +6,7 @@ import java.sql.Blob;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
@@ -17,10 +18,11 @@ import javax.validation.constraints.NotNull;
 public class category_master {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
 	@NotNull
-	private String loan_sub_cat_name;
+	private String name;
 	
 	private Long charge;
 	
@@ -41,12 +43,13 @@ public class category_master {
 		this.id = id;
 	}
 
-	public String getLoan_sub_cat_name() {
-		return loan_sub_cat_name;
+	
+	public String getName() {
+		return name;
 	}
 
-	public void setLoan_sub_cat_name(String loan_sub_cat_name) {
-		this.loan_sub_cat_name = loan_sub_cat_name;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Long getCharge() {
